@@ -1,6 +1,7 @@
 package com.nano.extract.data.client;
 
 import com.nano.extract.ModMain;
+import com.nano.extract.block.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -13,7 +14,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     @Override
     protected void registerStatesAndModels() {
-//        simpleBlock(ModBlocks.BRONZE_BLOCK.get());
+        simpleBlock(ModBlocks.JUICER.get());
         }
 }
 

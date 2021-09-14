@@ -14,13 +14,13 @@ public class ModItemModelProvider extends ItemModelProvider
     }
 @Override
     protected void registerModels() {
-//    withExistingParent("tin_ore", modLoc("block/tin_ore"));
+    withExistingParent("juicer", modLoc("block/juicer"));
 
     ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
     // General
 
     builder(itemGenerated, "cactus_fruit");
-
+    builder(itemGenerated, "cactus_fruit_juice");
     }
 
     private ItemModelBuilder builder(ModelFile itemGenerated, String name) {

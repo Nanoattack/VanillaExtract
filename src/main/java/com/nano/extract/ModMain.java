@@ -1,9 +1,14 @@
 package com.nano.extract;
 
+import com.nano.extract.block.ModBlocks;
+import com.nano.extract.container.ModContainers;
 import com.nano.extract.data.DataGenerators;
 import com.nano.extract.item.ModItems;
+import com.nano.extract.screen.JuicerScreen;
+import com.nano.extract.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +40,9 @@ public class ModMain
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
+        ModTileEntities.register(eventBus);
+        ModContainers.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -58,6 +66,9 @@ public class ModMain
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+
+        ScreenManager.register(ModContainers.JUICER_CONTAINER.get(),
+                JuicerScreen::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

@@ -19,6 +19,11 @@ public class ModItems
                     .food((new Food.Builder().nutrition(1).saturationMod(0.1f).fast().build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
+    public static final RegistryObject<Item> CACTUS_FRUIT_JUICE = ITEMS.register("cactus_fruit_juice",
+            () -> new Item(new Item.Properties()
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).fast().build()))
+                    .tab(ItemGroup.TAB_FOOD)));
+
 
     public static void register(IEventBus eventBus)
     {
