@@ -1,9 +1,8 @@
 package com.nano.extract.item;
 
 import com.nano.extract.ModMain;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import com.nano.extract.item.custom.juiceItem;
+import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -20,9 +19,11 @@ public class ModItems
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> CACTUS_FRUIT_JUICE = ITEMS.register("cactus_fruit_juice",
-            () -> new Item(new Item.Properties()
+            () -> new juiceItem(new Item.Properties()
                     .food((new Food.Builder().nutrition(1).saturationMod(0.3f).fast().build()))
                     .tab(ItemGroup.TAB_FOOD)));
+
+
 
 
     public static void register(IEventBus eventBus)

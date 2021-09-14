@@ -15,10 +15,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.ITextComponent;
@@ -52,7 +49,7 @@ public class JuicerBlock extends Block {
                 }
             } else {
                 if(tileEntity instanceof JuicerTile) {
-                    worldIn.playSound(player, pos, SoundType.ANVIL.getHitSound(), SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    worldIn.playSound(null, pos, SoundEvents.ANVIL_USE, SoundCategory.BLOCKS, 1, 1);
 
                     ((JuicerTile) tileEntity).AfterJuiceSound();
                 }
