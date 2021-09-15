@@ -64,10 +64,12 @@ public class JuicerBlock extends Block {
         return ActionResultType.SUCCESS;
     }
 
+    @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
+    @Override
     protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> stateBuilder) {
         stateBuilder.add(FACING);
     }
