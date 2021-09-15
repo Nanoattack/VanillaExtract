@@ -1,8 +1,9 @@
 {
-  "parent": "extract:block/orientable",
+  "parent": "minecraft:block/orientable",
   "textures": {
     "top": "extract:block/juicer_top",
     "front": "extract:block/juicer_front",
-    "side": "extract:block/juicer_side"
+    "side": "extract:block/juicer_side",
+    "bottom": "extract:block/juicer_bottom"
   }
 }

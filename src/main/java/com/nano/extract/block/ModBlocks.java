@@ -2,16 +2,13 @@ package com.nano.extract.block;
 
 import com.nano.extract.ModMain;
 import com.nano.extract.block.custom.JuicerBlock;
+import com.nano.extract.block.custom.OpuntiaCactus;
 import com.nano.extract.item.ModItems;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,6 +23,10 @@ public class ModBlocks
 
     public static final RegistryObject<Block> JUICER = registerBlock("juicer",
             ()-> new JuicerBlock(AbstractBlock.Properties.of(Material.METAL)));
+
+    public static final RegistryObject<Block> OPUNTIA_CACTUS = BLOCKS.register("opuntia_cactus",
+            ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.CACTUS)));
+
 
 
 

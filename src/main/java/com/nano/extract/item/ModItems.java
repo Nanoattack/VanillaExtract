@@ -1,6 +1,7 @@
 package com.nano.extract.item;
 
 import com.nano.extract.ModMain;
+import com.nano.extract.block.ModBlocks;
 import com.nano.extract.item.custom.juiceItem;
 import net.minecraft.item.*;
 import net.minecraft.potion.Effects;
@@ -15,7 +16,7 @@ public class ModItems
 
 
     public static final RegistryObject<Item> CACTUS_FRUIT = ITEMS.register("cactus_fruit",
-            () -> new Item(new Item.Properties()
+            () -> new BlockItem(ModBlocks.OPUNTIA_CACTUS.get(), new Item.Properties()
                     .food((new Food.Builder().nutrition(1).saturationMod(0.1f).fast().build()))
                     .tab(ItemGroup.TAB_FOOD)));
 

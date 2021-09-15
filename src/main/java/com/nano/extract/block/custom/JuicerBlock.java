@@ -54,8 +54,8 @@ public class JuicerBlock extends Block {
                 }
             } else {
                 if(tileEntity instanceof JuicerTile) {
-                    worldIn.playSound(null, pos, SoundEvents.PISTON_EXTEND, SoundCategory.BLOCKS, 1, 1);
-                    worldIn.playSound(null, pos, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundCategory.BLOCKS, 1, 1);
+                    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.PISTON_EXTEND, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+                    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.COW_MILK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
 
                     ((JuicerTile) tileEntity).AfterJuiceSound();
                 }

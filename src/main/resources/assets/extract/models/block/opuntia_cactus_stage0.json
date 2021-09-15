@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "extract:block/opuntia_cactus_stage0"
+  }
+}
