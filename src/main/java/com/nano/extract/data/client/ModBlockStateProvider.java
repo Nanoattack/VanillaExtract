@@ -14,7 +14,6 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     @Override
     protected void registerStatesAndModels() {
-        simpleBlock(ModBlocks.JUICER.get());
         }
 }
 

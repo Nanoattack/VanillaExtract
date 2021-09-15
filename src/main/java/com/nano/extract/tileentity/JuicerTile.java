@@ -55,13 +55,16 @@ public class JuicerTile extends TileEntity {
                 switch (slot){
                     //bottle/juice go here
                     case 1: return stack.getItem() == Items.GLASS_BOTTLE ||
-                                   stack.getItem() == ModItems.CACTUS_FRUIT_JUICE.get();
+                                   stack.getItem() == ModItems.CACTUS_FRUIT_JUICE.get() ||
+                                   stack.getItem() == ModItems.APPLE_JUICE.get() ||
+                                   stack.getItem() == ModItems.CARROT_JUICE.get();
                     //thing to be juiced goes here
                     case 0: return stack.getItem() == ModItems.CACTUS_FRUIT.get() ||
                             stack.getItem() == Items.APPLE ||
                             stack.getItem() == Items.MELON_SLICE ||
                             stack.getItem() == Items.SWEET_BERRIES ||
                             stack.getItem() == Items.CHORUS_FRUIT ||
+                            stack.getItem() == Items.CARROT ||
                             stack.getItem() == Items.COCOA_BEANS;
 
                     default:
@@ -99,7 +102,11 @@ public class JuicerTile extends TileEntity {
 
     public void AfterJuiceSound() {
         boolean hasCactusInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(1).getItem() != ModItems.CACTUS_FRUIT.get();
+                && this.itemHandler.getStackInSlot(0).getItem() == ModItems.CACTUS_FRUIT.get();
+        boolean hasAppleInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
+                && this.itemHandler.getStackInSlot(0).getItem() == Items.APPLE;
+        boolean hasCarrotInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
+                && this.itemHandler.getStackInSlot(0).getItem() == Items.CARROT;
         boolean hasBottleInSecondSlot = this.itemHandler.getStackInSlot(1).getCount() > 0
                 && this.itemHandler.getStackInSlot(1).getItem() == Items.GLASS_BOTTLE;
 
@@ -109,6 +116,20 @@ public class JuicerTile extends TileEntity {
             this.itemHandler.getStackInSlot(1).shrink(1);
 
             this.itemHandler.insertItem(1, new ItemStack(ModItems.CACTUS_FRUIT_JUICE.get()), false);
+        }
+        else if (hasBottleInSecondSlot && hasAppleInFirstSlot)
+        {
+            this.itemHandler.getStackInSlot(0).shrink(1);
+            this.itemHandler.getStackInSlot(1).shrink(1);
+
+            this.itemHandler.insertItem(1, new ItemStack(ModItems.APPLE_JUICE.get()), false);
+        }
+        else if (hasBottleInSecondSlot && hasCarrotInFirstSlot)
+        {
+            this.itemHandler.getStackInSlot(0).shrink(1);
+            this.itemHandler.getStackInSlot(1).shrink(1);
+
+            this.itemHandler.insertItem(1, new ItemStack(ModItems.CARROT_JUICE.get()), false);
         }
     }
 }

@@ -1,6 +1,8 @@
 {
-  "item.extract.cactus_fruit": "Cactus Fruit",
-  "item.extract.cactus_fruit_juice": "Cactus Fruit Juice",
+  "item.extract.cactus_fruit": "Prickly Pear",
+  "item.extract.cactus_fruit_juice": "Prickly Pear Juice",
+  "item.extract.apple_juice": "Apple Juice",
+  "item.extract.carrot_juice": "Carrot Juice",
   "block.extract.juicer": "Juicer",
   "screen.extract.juicer": "Juicer"
 }
