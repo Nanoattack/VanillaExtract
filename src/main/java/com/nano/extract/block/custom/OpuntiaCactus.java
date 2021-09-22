@@ -20,6 +20,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.PlantType;
 
 import java.util.Random;
 
@@ -39,7 +40,10 @@ public class OpuntiaCactus extends SweetBerryBushBlock
     protected boolean mayPlaceOn(BlockState state, IBlockReader blockReader, BlockPos pos) {
         return state.is(Blocks.SAND);
     }
-
+    @Override
+    public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+        return PlantType.DESERT;
+    }
     @Override
     public ItemStack getCloneItemStack(IBlockReader blockReader, BlockPos pos, BlockState state) {
         return new ItemStack(ModItems.CACTUS_FRUIT.get());

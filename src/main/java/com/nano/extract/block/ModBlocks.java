@@ -25,7 +25,7 @@ public class ModBlocks
             ()-> new JuicerBlock(AbstractBlock.Properties.of(Material.METAL)));
 
     public static final RegistryObject<Block> OPUNTIA_CACTUS = BLOCKS.register("opuntia_cactus",
-            ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.CACTUS)));
+            ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.BAMBOO_SAPLING).noOcclusion()));
 
 
 

@@ -130,6 +130,7 @@ public class JuicerTile extends TileEntity {
             this.itemHandler.getStackInSlot(1).shrink(1);
 
             this.itemHandler.insertItem(1, new ItemStack(ModItems.CARROT_JUICE.get()), false);
+
         }
     }
 }
