@@ -1,4 +1,4 @@
-package com.nano.extract.data.client;
+package com.nano.extract.data;
 
 import net.minecraft.data.*;
 import net.minecraft.item.Items;

@@ -23,6 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider
     builder(itemGenerated, "cactus_fruit_juice");
     builder(itemGenerated, "carrot_juice");
     builder(itemGenerated, "apple_juice");
+    builder(itemGenerated, "banana");
 }
 
     private ItemModelBuilder builder(ModelFile itemGenerated, String name) {

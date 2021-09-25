@@ -17,7 +17,12 @@ public class ModItems
 
     public static final RegistryObject<Item> CACTUS_FRUIT = ITEMS.register("cactus_fruit",
             () -> new BlockItem(ModBlocks.OPUNTIA_CACTUS.get(), new Item.Properties()
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.1f).fast().build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.1f).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
+
+    public static final RegistryObject<Item> BANANA = ITEMS.register("banana",
+            () -> new Item(new Item.Properties()
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.1f).build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> CACTUS_FRUIT_JUICE = ITEMS.register("cactus_fruit_juice",

@@ -9,6 +9,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,7 +23,7 @@ public class ModBlocks
             = DeferredRegister.create(ForgeRegistries.BLOCKS, ModMain.MOD_ID);
 
     public static final RegistryObject<Block> JUICER = registerBlock("juicer",
-            ()-> new JuicerBlock(AbstractBlock.Properties.of(Material.METAL)));
+            ()-> new JuicerBlock(AbstractBlock.Properties.of(Material.METAL).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> OPUNTIA_CACTUS = BLOCKS.register("opuntia_cactus",
             ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.BAMBOO_SAPLING).noOcclusion()));
