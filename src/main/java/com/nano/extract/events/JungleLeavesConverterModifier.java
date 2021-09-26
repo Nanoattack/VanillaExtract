@@ -16,12 +16,12 @@ import java.util.List;
 
 public class JungleLeavesConverterModifier extends LootModifier
 {
-    private final int numSeedsToConvert;
+    private final int countToConvert;
     private final Item itemToCheck;
     private final Item itemReward;
-    public JungleLeavesConverterModifier(ILootCondition[] conditionsIn, int numSeeds, Item itemCheck, Item reward) {
+    public JungleLeavesConverterModifier(ILootCondition[] conditionsIn, int count, Item itemCheck, Item reward) {
         super(conditionsIn);
-        numSeedsToConvert = numSeeds;
+        countToConvert = count;
         itemToCheck = itemCheck;
         itemReward = reward;
 }
@@ -33,17 +33,17 @@ public class JungleLeavesConverterModifier extends LootModifier
         // Additional conditions can be checked, though as much as possible should be parameterized via JSON data.
         // It is better to write a new ILootCondition implementation than to do things here.
         //
-        int numSeeds = 0;
+        int count = 0;
         for (ItemStack stack : generatedLoot) {
             if (stack.getItem() == itemToCheck)
-                numSeeds += stack.getCount();
+                count += stack.getCount();
         }
-        if (numSeeds >= numSeedsToConvert) {
+        if (count >= countToConvert) {
             generatedLoot.removeIf(x -> x.getItem() == itemToCheck);
-            generatedLoot.add(new ItemStack(itemReward, (numSeeds / numSeedsToConvert)));
-            numSeeds = numSeeds % numSeedsToConvert;
-            if (numSeeds > 0)
-                generatedLoot.add(new ItemStack(itemToCheck, numSeeds));
+            generatedLoot.add(new ItemStack(itemReward, (count / countToConvert)));
+            count = count % countToConvert;
+            if (count > 0)
+                generatedLoot.add(new ItemStack(itemToCheck, count));
         }
         return generatedLoot;
     }
@@ -52,17 +52,17 @@ public class JungleLeavesConverterModifier extends LootModifier
 
         @Override
         public JungleLeavesConverterModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
-            int numSeeds = JSONUtils.getAsInt(object, "numSeeds");
-            Item seed = ForgeRegistries.ITEMS.getValue(new ResourceLocation((JSONUtils.getAsString(object, "seedItem"))));
+            int count = JSONUtils.getAsInt(object, "count");
+            Item seed = ForgeRegistries.ITEMS.getValue(new ResourceLocation((JSONUtils.getAsString(object, "item"))));
             Item wheat = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(object, "replacement")));
-            return new JungleLeavesConverterModifier(conditionsIn, numSeeds, seed, wheat);
+            return new JungleLeavesConverterModifier(conditionsIn, count, seed, wheat);
         }
 
         @Override
         public JsonObject write(JungleLeavesConverterModifier instance) {
             JsonObject json = makeConditions(instance.conditions);
-            json.addProperty("numSeeds", instance.numSeedsToConvert);
-            json.addProperty("seedItem", ForgeRegistries.ITEMS.getKey(instance.itemToCheck).toString());
+            json.addProperty("count", instance.countToConvert);
+            json.addProperty("item", ForgeRegistries.ITEMS.getKey(instance.itemToCheck).toString());
             json.addProperty("replacement", ForgeRegistries.ITEMS.getKey(instance.itemReward).toString());
             return json;
         }
