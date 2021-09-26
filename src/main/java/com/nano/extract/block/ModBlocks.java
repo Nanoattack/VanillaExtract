@@ -23,7 +23,7 @@ public class ModBlocks
             = DeferredRegister.create(ForgeRegistries.BLOCKS, ModMain.MOD_ID);
 
     public static final RegistryObject<Block> JUICER = registerBlock("juicer",
-            ()-> new JuicerBlock(AbstractBlock.Properties.of(Material.METAL).harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
+            ()-> new JuicerBlock(AbstractBlock.Properties.of(Material.METAL).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(4f,10f)));
 
     public static final RegistryObject<Block> OPUNTIA_CACTUS = BLOCKS.register("opuntia_cactus",
             ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.BAMBOO_SAPLING).noOcclusion()));
