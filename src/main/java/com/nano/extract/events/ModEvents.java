@@ -9,16 +9,18 @@ import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nonnull;
 
-@Mod.EventBusSubscriber(modid = ModMain.MOD_ID)
+@Mod.EventBusSubscriber(modid = ModMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEvents
 {
     @SubscribeEvent
-    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
-            event.getRegistry().register(
-                    new JungleLeavesConverterModifier.Serializer().setRegistryName(new ResourceLocation(ModMain.MOD_ID,"jungle_leaves"))
-            );
-
+    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>>
+                                                           event) {
+        event.getRegistry().register(
+                new JungleLeavesConverterModifier.Serializer().setRegistryName
+                        (new ResourceLocation(ModMain.MOD_ID,"jungle_leaves_drop_banana"))
+        );
     }
 }
+
 
 

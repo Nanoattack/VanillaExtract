@@ -1,8 +1,8 @@
 {
   "conditions": [
-        {
+    {
       "condition": "block_state_property",
-      "block":"minecraft:jungle_leaves"
+      "block": "minecraft:jungle_leaves"
     }
   ],
   "item": "minecraft:stick",
