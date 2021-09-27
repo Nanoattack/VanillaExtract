@@ -61,7 +61,11 @@ public class JungleLeavesConverterModifier extends LootModifier
 
         @Override
         public JsonObject write(JungleLeavesConverterModifier instance) {
-            return null;
+            JsonObject json = makeConditions(instance.conditions);
+            json.addProperty("count", instance.countToConvert);
+            json.addProperty("item", ForgeRegistries.ITEMS.getKey(instance.itemToCheck).toString());
+            json.addProperty("replacement", ForgeRegistries.ITEMS.getKey(instance.itemReward).toString());
+            return json;
         }
     }
 }

@@ -48,6 +48,7 @@ public class ModMain
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
 
+        MinecraftForge.EVENT_BUS.register(new JungleLeavesConverterModifier.Serializer());
         MinecraftForge.EVENT_BUS.register(new ModEvents());
 
 
