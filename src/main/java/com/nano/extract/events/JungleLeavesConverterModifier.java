@@ -19,6 +19,7 @@ public class JungleLeavesConverterModifier extends LootModifier
     private final int countToConvert;
     private final Item itemToCheck;
     private final Item itemReward;
+
     public JungleLeavesConverterModifier(ILootCondition[] conditionsIn, int count, Item itemCheck, Item reward) {
         super(conditionsIn);
         countToConvert = count;
@@ -36,12 +37,12 @@ public class JungleLeavesConverterModifier extends LootModifier
         int count = 0;
         for (ItemStack stack : generatedLoot) {
             if (stack.getItem() == itemToCheck)
-                count += stack.getCount();
+                count+=stack.getCount();
         }
         if (count >= countToConvert) {
             generatedLoot.removeIf(x -> x.getItem() == itemToCheck);
-            generatedLoot.add(new ItemStack(itemReward, (count / countToConvert)));
-            count = count % countToConvert;
+            generatedLoot.add(new ItemStack(itemReward, (count/countToConvert)));
+            count = count%countToConvert;
             if (count > 0)
                 generatedLoot.add(new ItemStack(itemToCheck, count));
         }
@@ -53,18 +54,14 @@ public class JungleLeavesConverterModifier extends LootModifier
         @Override
         public JungleLeavesConverterModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
             int count = JSONUtils.getAsInt(object, "count");
-            Item seed = ForgeRegistries.ITEMS.getValue(new ResourceLocation((JSONUtils.getAsString(object, "item"))));
-            Item wheat = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(object, "replacement")));
-            return new JungleLeavesConverterModifier(conditionsIn, count, seed, wheat);
+            Item stick = ForgeRegistries.ITEMS.getValue(new ResourceLocation((JSONUtils.getAsString(object, "item"))));
+            Item banana = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(object, "replacement")));
+            return new JungleLeavesConverterModifier(conditionsIn, count, stick, banana);
         }
 
         @Override
         public JsonObject write(JungleLeavesConverterModifier instance) {
-            JsonObject json = makeConditions(instance.conditions);
-            json.addProperty("count", instance.countToConvert);
-            json.addProperty("item", ForgeRegistries.ITEMS.getKey(instance.itemToCheck).toString());
-            json.addProperty("replacement", ForgeRegistries.ITEMS.getKey(instance.itemReward).toString());
-            return json;
+            return null;
         }
     }
 }

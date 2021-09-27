@@ -1,6 +1,6 @@
 {
   "replace": false,
   "entries": [
-    "global_loot_test:jungle_leaves"
+    "extract:jungle_leaves"
   ]
 }
