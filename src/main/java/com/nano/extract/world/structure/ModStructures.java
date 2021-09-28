@@ -51,6 +51,13 @@ public class ModStructures {
          * Doesn't work well on structure that have pieces stacked vertically or change in heights.
          *
          */
+        if (transformSurroundingLand) {
+            Structure.NOISE_AFFECTING_FEATURES = ImmutableList.<Structure<?>>builder()
+                    .addAll(Structure.NOISE_AFFECTING_FEATURES)
+                    .add(structure)
+                    .build();
+        }
+
         DimensionStructuresSettings.DEFAULTS =
                 ImmutableMap.<Structure<?>, StructureSeparationSettings>builder()
                         .putAll(DimensionStructuresSettings.DEFAULTS)
