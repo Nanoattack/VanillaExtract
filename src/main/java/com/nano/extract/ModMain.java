@@ -8,6 +8,7 @@ import com.nano.extract.events.ModEvents;
 import com.nano.extract.item.ModItems;
 import com.nano.extract.screen.JuicerScreen;
 import com.nano.extract.tileentity.ModTileEntities;
+import com.nano.extract.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
@@ -47,10 +48,10 @@ public class ModMain
         ModBlocks.register(eventBus);
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
+        ModStructures.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(new JungleLeavesConverterModifier.Serializer());
         MinecraftForge.EVENT_BUS.register(new ModEvents());
-
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -86,6 +87,7 @@ public class ModMain
     {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+        ModStructures.setupStructures();
     }
 
     private void processIMC(final InterModProcessEvent event)
