@@ -30,7 +30,7 @@ public class ModBlocks
             ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.BAMBOO_SAPLING).noOcclusion()));
 
     public static final RegistryObject<Block> RICE = BLOCKS.register("rice_crop",
-            () -> new RiceBlock(AbstractBlock.Properties.of(Material.PLANT)));
+            () -> new RiceBlock(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.CROP).noOcclusion()));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

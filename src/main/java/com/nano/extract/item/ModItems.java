@@ -21,7 +21,7 @@ public class ModItems
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> RICE_SHOOTS = ITEMS.register("rice_shoots",
-            () -> new Item(new Item.Properties()
+            () -> new BlockItem(ModBlocks.RICE.get(), new Item.Properties()
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> BANANA = ITEMS.register("banana",

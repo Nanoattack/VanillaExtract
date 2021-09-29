@@ -24,7 +24,16 @@ public class ModFlowerGeneration
                     event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION);
 
             base.add(() -> ModConfiguredFeatures.OPUNTIA_CACTUS_CONFIG);
+
         }
+            if(types.contains(BiomeDictionary.Type.SWAMP))
+            {
+                List<Supplier<ConfiguredFeature<?, ?>>> base =
+                        event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION);
+
+                base.add(() -> ModConfiguredFeatures.RICE_CONFIG);
+            }
+
     }
 }
 
