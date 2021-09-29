@@ -3,6 +3,7 @@ package com.nano.extract.block;
 import com.nano.extract.ModMain;
 import com.nano.extract.block.custom.JuicerBlock;
 import com.nano.extract.block.custom.OpuntiaCactus;
+import com.nano.extract.block.custom.RiceBlock;
 import com.nano.extract.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -28,8 +29,8 @@ public class ModBlocks
     public static final RegistryObject<Block> OPUNTIA_CACTUS = BLOCKS.register("opuntia_cactus",
             ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.BAMBOO_SAPLING).noOcclusion()));
 
-
-
+    public static final RegistryObject<Block> RICE = BLOCKS.register("rice_crop",
+            () -> new RiceBlock(AbstractBlock.Properties.of(Material.PLANT)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

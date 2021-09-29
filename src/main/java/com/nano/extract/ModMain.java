@@ -80,7 +80,7 @@ public class ModMain
                 JuicerScreen::new);
 
         RenderTypeLookup.setRenderLayer(ModBlocks.OPUNTIA_CACTUS.get(), RenderType.cutout());
-
+        RenderTypeLookup.setRenderLayer(ModBlocks.RICE.get(), RenderType.cutout());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

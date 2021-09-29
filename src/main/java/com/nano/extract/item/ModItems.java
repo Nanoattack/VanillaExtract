@@ -20,6 +20,10 @@ public class ModItems
                     .food((new Food.Builder().nutrition(1).saturationMod(0.1f).build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
+    public static final RegistryObject<Item> RICE_SHOOTS = ITEMS.register("rice_shoots",
+            () -> new Item(new Item.Properties()
+                    .tab(ItemGroup.TAB_FOOD)));
+
     public static final RegistryObject<Item> BANANA = ITEMS.register("banana",
             () -> new Item(new Item.Properties()
                     .food((new Food.Builder().nutrition(1).saturationMod(0.1f).build()))
