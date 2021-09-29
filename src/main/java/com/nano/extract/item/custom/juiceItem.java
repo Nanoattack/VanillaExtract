@@ -1,5 +1,6 @@
 package com.nano.extract.item.custom;
 
+import com.nano.extract.item.ModItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,10 +33,10 @@ public class juiceItem extends Item
                     }
 
         if (stack.isEmpty()) {
-            return new ItemStack(Items.GLASS_BOTTLE);
+            return new ItemStack(ModItems.BAMBOO_CUP.get());
         } else {
             if (entity instanceof PlayerEntity && !((PlayerEntity)entity).abilities.instabuild) {
-                ItemStack itemstack = new ItemStack(Items.GLASS_BOTTLE);
+                ItemStack itemstack = new ItemStack(ModItems.BAMBOO_CUP.get());
                 PlayerEntity playerentity = (PlayerEntity)entity;
                 if (!playerentity.inventory.add(itemstack)) {
                     playerentity.drop(itemstack, false);

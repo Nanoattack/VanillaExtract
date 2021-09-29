@@ -1,5 +1,6 @@
 package com.nano.extract.data;
 
+import com.nano.extract.item.ModItems;
 import net.minecraft.data.*;
 import net.minecraft.item.Items;
 import net.minecraft.tags.ItemTags;
@@ -29,6 +30,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(Items.PISTON))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(ModItems.BAMBOO_CUP.get())
+                .define('B', Items.BAMBOO)
+                .pattern("B B")
+                .pattern(" B ")
+                .unlockedBy("has_item", has(Items.BAMBOO))
+                .save(consumer);
     }
 
     private static ResourceLocation modId(String path) {

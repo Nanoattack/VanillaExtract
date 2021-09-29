@@ -3,7 +3,7 @@ package com.nano.extract.world.structure;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.nano.extract.ModMain;
-import com.nano.extract.world.structure.structures.Domis_Mactibilis_Structure;
+import com.nano.extract.world.structure.structures.DomisMactibilisStructure;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
@@ -22,7 +22,7 @@ public class ModStructures {
             DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, ModMain.MOD_ID);
 
     public static final RegistryObject<Structure<NoFeatureConfig>> DOMINIS_MACTIBILIS =
-            STRUCTURES.register("domis_mactibilis", Domis_Mactibilis_Structure::new);
+            STRUCTURES.register("domis_mactibilis", DomisMactibilisStructure::new);
 
     /* average distance apart in chunks between spawn attempts */
     /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/

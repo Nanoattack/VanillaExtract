@@ -43,6 +43,10 @@ public class ModItems
                     .food((new Food.Builder().nutrition(1).saturationMod(0.3f).fast().build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
+    public static final RegistryObject<Item> BAMBOO_CUP = ITEMS.register("bamboo_cup",
+            () -> new Item(new Item.Properties()
+                    .tab(ItemGroup.TAB_MISC)));
+
 
 
 

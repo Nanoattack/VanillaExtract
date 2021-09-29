@@ -1,10 +1,13 @@
 183b52177009a814be1f2719f5a37c8f6761c045 assets/extract/models/item/apple_juice.json
+bf055b8e97d589f14734211db845ff1d1c007c9c assets/extract/models/item/bamboo_cup.json
 545f8075059fb2b44cf68ad006344415402c6958 assets/extract/models/item/banana.json
 a18400cb287a5b51c03b28f6604b95db8050ed03 assets/extract/models/item/cactus_fruit.json
 69e668866c274ff9fc811b4cc77d5e2e9d5d87e6 assets/extract/models/item/cactus_fruit_juice.json
 ae2a962d1a66691efc81ac7128e9bb4045fd7760 assets/extract/models/item/carrot_juice.json
 93570c1563a9dd51d9efc4d67ba39357d44423bf assets/extract/models/item/juicer.json
 fddeb52b84091e6f0d12164014bae532cd5328df data/extract/advancements/recipes/building_blocks/juicer.json
+b1efea89caf112dc90266db6811139440a408e0d data/extract/advancements/recipes/misc/bamboo_cup.json
 887997b8582c90c41480bbfa51a218e7bb89193a data/extract/loot_tables/blocks/juicer.json
 dcd9d0d9f9648a9f25102370ea4cb839b0ea2b6c data/extract/loot_tables/blocks/opuntia_cactus.json
+5bac050a6c351b11870b854bc3243e338dbaed42 data/extract/recipes/bamboo_cup.json
 28ce52d6f62d61896d855987320c91d71ab42fd0 data/extract/recipes/juicer.json

@@ -54,7 +54,7 @@ public class JuicerTile extends TileEntity {
             public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
                 switch (slot){
                     //bottle/juice go here
-                    case 1: return stack.getItem() == Items.GLASS_BOTTLE ||
+                    case 1: return stack.getItem() == ModItems.BAMBOO_CUP.get() ||
                                    stack.getItem() == ModItems.CACTUS_FRUIT_JUICE.get() ||
                                    stack.getItem() == ModItems.APPLE_JUICE.get() ||
                                    stack.getItem() == ModItems.CARROT_JUICE.get();
@@ -107,24 +107,24 @@ public class JuicerTile extends TileEntity {
                 && this.itemHandler.getStackInSlot(0).getItem() == Items.APPLE;
         boolean hasCarrotInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
                 && this.itemHandler.getStackInSlot(0).getItem() == Items.CARROT;
-        boolean hasBottleInSecondSlot = this.itemHandler.getStackInSlot(1).getCount() > 0
-                && this.itemHandler.getStackInSlot(1).getItem() == Items.GLASS_BOTTLE;
+        boolean hasCupInSecondSlot = this.itemHandler.getStackInSlot(1).getCount() > 0
+                && this.itemHandler.getStackInSlot(1).getItem() == ModItems.BAMBOO_CUP.get();
 
-        if(hasBottleInSecondSlot && hasCactusInFirstSlot)
+        if(hasCupInSecondSlot && hasCactusInFirstSlot)
         {
             this.itemHandler.getStackInSlot(0).shrink(1);
             this.itemHandler.getStackInSlot(1).shrink(1);
 
             this.itemHandler.insertItem(1, new ItemStack(ModItems.CACTUS_FRUIT_JUICE.get()), false);
         }
-        else if (hasBottleInSecondSlot && hasAppleInFirstSlot)
+        else if (hasCupInSecondSlot && hasAppleInFirstSlot)
         {
             this.itemHandler.getStackInSlot(0).shrink(1);
             this.itemHandler.getStackInSlot(1).shrink(1);
 
             this.itemHandler.insertItem(1, new ItemStack(ModItems.APPLE_JUICE.get()), false);
         }
-        else if (hasBottleInSecondSlot && hasCarrotInFirstSlot)
+        else if (hasCupInSecondSlot && hasCarrotInFirstSlot)
         {
             this.itemHandler.getStackInSlot(0).shrink(1);
             this.itemHandler.getStackInSlot(1).shrink(1);
