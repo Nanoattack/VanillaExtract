@@ -39,7 +39,7 @@ public class RiceBlock extends CropsBlock
     public boolean canSurvive(BlockState blockState, IWorldReader iWorldReader, BlockPos blockPos)
     {
         BlockState blockstate = iWorldReader.getBlockState(blockPos.below());
-            if (blockstate.is(Blocks.GRASS_BLOCK)|| blockstate.is(Blocks.DIRT) || blockstate.is(Blocks.COARSE_DIRT) || blockstate.is(Blocks.PODZOL) || blockstate.is(Blocks.FARMLAND)) {
+            if (blockstate.is(Blocks.WATER) || blockstate.is(Blocks.FARMLAND)) {
                 BlockPos blockpos = blockPos.below();
 
                 for(Direction direction : Direction.Plane.HORIZONTAL) {

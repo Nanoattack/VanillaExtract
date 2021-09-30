@@ -2,6 +2,7 @@ package com.nano.extract.item;
 
 import com.nano.extract.ModMain;
 import com.nano.extract.block.ModBlocks;
+import com.nano.extract.item.custom.WaterCropBlockItem;
 import com.nano.extract.item.custom.juiceItem;
 import net.minecraft.item.*;
 import net.minecraft.potion.Effects;
@@ -21,7 +22,7 @@ public class ModItems
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> RICE_SHOOTS = ITEMS.register("rice_shoots",
-            () -> new BlockItem(ModBlocks.RICE.get(), new Item.Properties()
+            () -> new WaterCropBlockItem(ModBlocks.RICE.get(), new Item.Properties()
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> BANANA = ITEMS.register("banana",
