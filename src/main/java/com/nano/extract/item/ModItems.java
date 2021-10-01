@@ -4,7 +4,9 @@ import com.nano.extract.ModMain;
 import com.nano.extract.block.ModBlocks;
 import com.nano.extract.item.custom.WaterCropBlockItem;
 import com.nano.extract.item.custom.juiceItem;
+import com.nano.extract.item.custom.juiceMilkItem;
 import net.minecraft.item.*;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -33,23 +35,48 @@ public class ModItems
     public static final RegistryObject<Item> CACTUS_FRUIT_JUICE = ITEMS.register("cactus_fruit_juice",
             () -> new juiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.FIRE_RESISTANCE, 200, 0), 1f).build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> APPLE_JUICE = ITEMS.register("apple_juice",
             () -> new juiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).fast().build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.MOVEMENT_SPEED, 200, 0), 1f).build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> CARROT_JUICE = ITEMS.register("carrot_juice",
             () -> new juiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).fast().build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.NIGHT_VISION, 200, 0), 1f).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
+
+    public static final RegistryObject<Item> MELON_JUICE = ITEMS.register("melon_juice",
+            () -> new juiceItem(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.GLOWING, 200, 0), 1f).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
+
+    public static final RegistryObject<Item> SWEET_BERRY_JUICE = ITEMS.register("sweet_berry_juice",
+            () -> new juiceItem(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.JUMP, 200, 0), 1f).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
+
+    public static final RegistryObject<Item> MILK_CUP = ITEMS.register("milk_cup",
+            () -> new juiceMilkItem(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(0).saturationMod(0).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
+
+    public static final RegistryObject<Item> CHOCOLATE_MILK = ITEMS.register("chocolate_milk",
+            () -> new juiceItem(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.DIG_SPEED, 200, 0), 1f).build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
     public static final RegistryObject<Item> BAMBOO_CUP = ITEMS.register("bamboo_cup",
             () -> new Item(new Item.Properties()
+                    .stacksTo(16)
                     .tab(ItemGroup.TAB_MISC)));
 
 

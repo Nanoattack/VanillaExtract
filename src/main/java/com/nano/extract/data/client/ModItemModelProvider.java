@@ -23,6 +23,10 @@ public class ModItemModelProvider extends ItemModelProvider
     builder(itemGenerated, "cactus_fruit_juice");
     builder(itemGenerated, "carrot_juice");
     builder(itemGenerated, "apple_juice");
+    builder(itemGenerated, "melon_juice");
+    builder(itemGenerated, "sweet_berry_juice");
+    builder(itemGenerated, "milk_cup");
+    builder(itemGenerated, "chocolate_milk");
     builder(itemGenerated, "banana");
     builder(itemGenerated, "bamboo_cup");
     builder(itemGenerated, "rice_shoots");

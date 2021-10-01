@@ -1,9 +1,13 @@
 {
   "item.extract.apple_juice": "Apple Juice",
   "item.extract.carrot_juice": "Carrot Juice",
+  "item.extract.sweet_berry_juice": "Sweet Berry Juice",
+  "item.extract.melon_juice": "Melon Juice",
   "item.extract.cactus_fruit_juice": "Prickly Pear Juice",
   "item.extract.banana": "Banana",
   "item.extract.bamboo_cup": "Bamboo Cup",
+  "item.extract.milk_cup": "Milk Cup",
+  "item.extract.chocolate_milk": "Chocolate Milk",
   "block.extract.juicer": "Juicer",
   "block.extract.opuntia_cactus": "Prickly Pear",
   "block.extract.rice_crop": "Rice Shoots",

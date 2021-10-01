@@ -9,42 +9,45 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
-import net.minecraft.potion.Effects;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-public class juiceItem extends Item
+public class juiceMilkItem extends Item
 {
 
-    public juiceItem(Properties properties) {
+    public juiceMilkItem(Properties properties) {
         super(properties);
     }
 
     public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity entity) {
-        super.finishUsingItem(stack, world, entity);
+
+        if (!world.isClientSide)
+            entity.curePotionEffects(stack); // FORGE - move up so stack.shrink does not turn stack into air
+
         if (entity instanceof ServerPlayerEntity) {
-            ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)entity;
+            ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entity;
             CriteriaTriggers.CONSUME_ITEM.trigger(serverplayerentity, stack);
             serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
-        }
-
-        if (!world.isClientSide) {
-                    }
 
         if (stack.isEmpty()) {
-            return new ItemStack(ModItems.BAMBOO_CUP.get());
-        } else {
-            if (entity instanceof PlayerEntity && !((PlayerEntity)entity).abilities.instabuild) {
-                ItemStack itemstack = new ItemStack(ModItems.BAMBOO_CUP.get());
-                PlayerEntity playerentity = (PlayerEntity)entity;
-                if (!playerentity.inventory.add(itemstack)) {
-                    playerentity.drop(itemstack, false);
+                return new ItemStack(ModItems.BAMBOO_CUP.get());
+            } else {
+                if (entity instanceof PlayerEntity && !((PlayerEntity) entity).abilities.instabuild)
+                {
+                    ItemStack itemstack = new ItemStack(ModItems.BAMBOO_CUP.get());
+                    PlayerEntity playerentity = (PlayerEntity) entity;
+                    if (!playerentity.inventory.add(itemstack)) {
+                        playerentity.drop(itemstack, false);
+                    }
                 }
             }
-
-            return stack;
         }
+
+        if (entity instanceof PlayerEntity && !((PlayerEntity) entity).abilities.instabuild) {
+            stack.shrink(1);
+        }
+        return stack.isEmpty() ? new ItemStack(Items.BUCKET) : stack;
     }
 
     public int getUseDuration(ItemStack stack) {
@@ -57,6 +60,10 @@ public class juiceItem extends Item
 
     public SoundEvent getDrinkingSound() {
         return SoundEvents.WANDERING_TRADER_DRINK_MILK;
+    }
+
+    public SoundEvent getEatingSound() {
+        return SoundEvents.HONEY_DRINK;
     }
 
     public ActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {

@@ -36,6 +36,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" B ")
                 .unlockedBy("has_item", has(Items.BAMBOO))
                 .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.MILK_CUP.get(), 8)
+                .requires(ModItems.BAMBOO_CUP.get(), 8)
+                .requires(Items.MILK_BUCKET, 1)
+                .unlockedBy("has_item", has(ModItems.BAMBOO_CUP.get()))
+                .save(consumer);
     }
 
     private static ResourceLocation modId(String path) {
