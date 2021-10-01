@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "result": {
+    "item": "extract:milk_cup",
+    "count": 8
+  }
+}
