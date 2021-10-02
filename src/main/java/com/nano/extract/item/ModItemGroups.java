@@ -4,8 +4,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public class ModItemGroups
+    //Can't have capitals in json denotation else data generators stop functioning
 {
-    public static final ItemGroup MOD_FOOD_GROUP = new ItemGroup("VanillaExtractFoodTab")
+    public static final ItemGroup MOD_FOOD_GROUP = new ItemGroup("vanillaextractfood")
     {
         @Override
         public ItemStack makeIcon()

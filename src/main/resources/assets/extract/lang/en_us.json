@@ -8,6 +8,16 @@
   "item.extract.banana": "Banana",
   "item.extract.bamboo_cup": "Bamboo Cup",
   "item.extract.milk_cup": "Milk Cup",
+  "item.extract.chicken_pot_pie": "Chicken Pot Pie",
+  "item.extract.sheperds_pie": "Sheperd's Pie",
+  "item.extract.banana_bread": "Banana Bread",
+  "item.extract.pumpkin_soup": "Pumpkin Soup",
+  "item.extract.chicken_noodle_soup": "Chicken Noodle Soup",
+  "item.extract.squid_ink_pasta": "Squid Ink Pasta",
+  "item.extract.rice_bowl": "Bowl of Rice",
+  "item.extract.fish_soup": "Fish Soup",
+  "item.extract.salmon_sushi": "Salmon Sushi",
+  "item.extract.stuffed_mushroom": "Stuffed Mushroom",
   "item.extract.sweet_berry_pie": "Sweet Berry Pie",
   "item.extract.sweet_berry_cookie": "Sweet Berry Cookie",
   "item.extract.apple_pie": "Apple Pie",
@@ -16,5 +26,5 @@
   "block.extract.opuntia_cactus": "Prickly Pear",
   "block.extract.rice_crop": "Rice Shoots",
   "screen.extract.juicer": "Juicer",
-  "itemGroup.VanillaExtractFoodTab": "Vanilla Extract - Foodstuffs"
+  "itemGroup.vanillaextractfood": "Vanilla Extract - Foodstuffs"
 }

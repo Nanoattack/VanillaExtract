@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WEW",
+    "cCM",
+    " B "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:cooked_chicken"
+    },
+    "M": {
+      "item": "minecraft:brown_mushroom"
+    },
+    "c": {
+      "item": "minecraft:carrot"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "extract:chicken_pot_pie"
+  }
+}

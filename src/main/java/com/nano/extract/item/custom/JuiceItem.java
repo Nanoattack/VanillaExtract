@@ -14,10 +14,10 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-public class juiceItem extends Item
+public class JuiceItem extends Item
 {
 
-    public juiceItem(Properties properties) {
+    public JuiceItem(Properties properties) {
         super(properties);
     }
 

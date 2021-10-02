@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WBW"
+  ],
+  "key": {
+    "B": {
+      "item": "extract:banana"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "extract:banana_bread"
+  }
+}

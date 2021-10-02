@@ -58,12 +58,96 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(Items.APPLE))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.SWEET_BERRY_COOKIE.get())
-                .requires(Items.SWEET_BERRIES)
-                .requires(Items.WHEAT, 2)
+        ShapelessRecipeBuilder.shapeless(ModItems.SHEPERDS_PIE.get())
+                .requires(Items.BAKED_POTATO)
+                .requires(Items.COOKED_MUTTON)
+                .requires(Items.EGG)
+                .requires(Items.CARROT)
+                .unlockedBy("has_item", has(Items.COOKED_MUTTON))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.PUMPKIN_SOUP.get())
+                .requires(Items.PUMPKIN, 3)
+                .requires(Items.APPLE)
+                .requires(Items.BOWL)
+                .unlockedBy("has_item", has(Items.PUMPKIN))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.CHICKEN_POT_PIE.get())
+                .define('C', Items.COOKED_CHICKEN)
+                .define('M', Items.BROWN_MUSHROOM)
+                .define('c', Items.CARROT)
+                .define('E', Items.EGG)
+                .define('W', Items.WHEAT)
+                .define('B', Items.BUCKET)
+                .pattern("WEW")
+                .pattern("cCM")
+                .pattern(" B ")
+                .unlockedBy("has_item", has(Items.COOKED_CHICKEN))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.BANANA_BREAD.get())
+                .define('B', ModItems.BANANA.get())
+                .define('W', Items.WHEAT)
+                .pattern("WBW")
+                .unlockedBy("has_item", has(ModItems.BANANA.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.SWEET_BERRY_COOKIE.get())
+                .define('S', Items.SWEET_BERRIES)
+                .define('W', Items.WHEAT)
+                .pattern("WSW")
                 .unlockedBy("has_item", has(Items.SWEET_BERRIES))
                 .save(consumer);
-            }
+
+        ShapelessRecipeBuilder.shapeless(ModItems.CHICKEN_NOODLE_SOUP.get())
+                .requires(Items.CHICKEN)
+                .requires(Items.BROWN_MUSHROOM)
+                .requires(Items.CARROT)
+                .requires(Items.WHEAT)
+                .requires(Items.BOWL)
+                .unlockedBy("has_item", has(Items.COOKED_CHICKEN))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.SQUID_INK_PASTA.get())
+                .requires(Items.SALMON)
+                .requires(Items.INK_SAC)
+                .requires(Items.WHEAT)
+                .requires(Items.BOWL)
+                .unlockedBy("has_item", has(Items.COOKED_SALMON))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.RICE_BOWL.get())
+                .requires(ModItems.RICE_SHOOTS.get())
+                .requires(Items.BOWL)
+                .unlockedBy("has_item", has(ModItems.RICE_SHOOTS.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.FISH_SOUP.get())
+                .requires(Items.COOKED_COD)
+                .requires(ModItems.RICE_SHOOTS.get())
+                .requires(Items.BEETROOT)
+                .requires(Items.BOWL)
+                .unlockedBy("has_item", has(Items.COOKED_COD))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.SALMON_SUSHI.get())
+                .requires(Items.SALMON)
+                .requires(ModItems.RICE_SHOOTS.get())
+                .requires(Items.DRIED_KELP)
+                .unlockedBy("has_item", has(Items.SALMON))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.STUFFED_MUSHROOM.get())
+                .define('M', Items.BROWN_MUSHROOM)
+                .define('B', Items.MILK_BUCKET)
+                .pattern("MMM")
+                .pattern("MBM")
+                .pattern("MMM")
+                .unlockedBy("has_item", has(Items.BROWN_MUSHROOM))
+                .save(consumer);
+
+    }
 
     private static ResourceLocation modId(String path) {
         return new ResourceLocation(ModMain.MOD_ID, path);
