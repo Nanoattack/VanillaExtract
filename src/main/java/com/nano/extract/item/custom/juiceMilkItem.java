@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
@@ -20,34 +21,44 @@ public class juiceMilkItem extends Item
         super(properties);
     }
 
-    public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity entity) {
+    public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity entity)
+    {
 
-        if (!world.isClientSide)
-            entity.curePotionEffects(stack); // FORGE - move up so stack.shrink does not turn stack into air
+        if (!world.isClientSide) {
+            removeRandomEffect(((PlayerEntity)entity));
+        }
 
+        super.finishUsingItem(stack, world, entity);
         if (entity instanceof ServerPlayerEntity) {
-            ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entity;
+            ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)entity;
             CriteriaTriggers.CONSUME_ITEM.trigger(serverplayerentity, stack);
             serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
+        }
+
+        if (!world.isClientSide) {
+        }
 
         if (stack.isEmpty()) {
-                return new ItemStack(ModItems.BAMBOO_CUP.get());
-            } else {
-                if (entity instanceof PlayerEntity && !((PlayerEntity) entity).abilities.instabuild)
-                {
-                    ItemStack itemstack = new ItemStack(ModItems.BAMBOO_CUP.get());
-                    PlayerEntity playerentity = (PlayerEntity) entity;
-                    if (!playerentity.inventory.add(itemstack)) {
-                        playerentity.drop(itemstack, false);
-                    }
+            return new ItemStack(ModItems.BAMBOO_CUP.get());
+        } else {
+            if (entity instanceof PlayerEntity && !((PlayerEntity)entity).abilities.instabuild) {
+                ItemStack itemstack = new ItemStack(ModItems.BAMBOO_CUP.get());
+                PlayerEntity playerentity = (PlayerEntity)entity;
+                if (!playerentity.inventory.add(itemstack)) {
+                    playerentity.drop(itemstack, false);
                 }
             }
-        }
 
-        if (entity instanceof PlayerEntity && !((PlayerEntity) entity).abilities.instabuild) {
-            stack.shrink(1);
+            return stack;
         }
-        return stack.isEmpty() ? new ItemStack(Items.BUCKET) : stack;
+    }
+
+    public static void removeRandomEffect(PlayerEntity player) {
+        if(player.getActiveEffects().isEmpty()) {
+            return;
+        }
+        int toRemoveIndex = random.nextInt(player.getActiveEffects().size());
+        player.removeEffect(((EffectInstance)player.getActiveEffects().stream().toArray()[toRemoveIndex]).getEffect());
     }
 
     public int getUseDuration(ItemStack stack) {

@@ -59,6 +59,10 @@ public class juiceItem extends Item
         return SoundEvents.WANDERING_TRADER_DRINK_MILK;
     }
 
+    public SoundEvent getEatingSound() {
+        return SoundEvents.WANDERING_TRADER_DRINK_MILK;
+    }
+
     public ActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
         return DrinkHelper.useDrink(world, playerEntity, hand);
     }

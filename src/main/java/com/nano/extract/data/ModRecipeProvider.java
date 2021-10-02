@@ -42,6 +42,20 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.MILK_BUCKET, 1)
                 .unlockedBy("has_item", has(ModItems.BAMBOO_CUP.get()))
                 .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.SWEET_BERRY_PIE.get())
+                .requires(Items.SUGAR)
+                .requires(Items.SWEET_BERRIES)
+                .requires(Items.EGG)
+                .unlockedBy("has_item", has(Items.SWEET_BERRIES))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.APPLE_PIE.get())
+                .requires(Items.HONEYCOMB)
+                .requires(Items.APPLE)
+                .requires(Items.EGG)
+                .unlockedBy("has_item", has(Items.APPLE))
+                .save(consumer);
     }
 
     private static ResourceLocation modId(String path) {

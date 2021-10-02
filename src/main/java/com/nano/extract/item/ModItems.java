@@ -25,7 +25,7 @@ public class ModItems
 
     public static final RegistryObject<Item> RICE_SHOOTS = ITEMS.register("rice_shoots",
             () -> new WaterCropBlockItem(ModBlocks.RICE.get(), new Item.Properties()
-                    .tab(ItemGroup.TAB_FOOD)));
+                    .tab(ItemGroup.TAB_MISC)));
 
     public static final RegistryObject<Item> BANANA = ITEMS.register("banana",
             () -> new Item(new Item.Properties()
@@ -62,6 +62,12 @@ public class ModItems
                     .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.JUMP, 200, 0), 1f).build()))
                     .tab(ItemGroup.TAB_FOOD)));
 
+    public static final RegistryObject<Item> CHORUS_FRUIT_JUICE = ITEMS.register("chorus_fruit_juice",
+            () -> new juiceItem(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.LEVITATION, 200, 0), 1f).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
+
     public static final RegistryObject<Item> MILK_CUP = ITEMS.register("milk_cup",
             () -> new juiceMilkItem(new Item.Properties()
                     .stacksTo(8)
@@ -79,9 +85,17 @@ public class ModItems
                     .stacksTo(16)
                     .tab(ItemGroup.TAB_MISC)));
 
+    public static final RegistryObject<Item> SWEET_BERRY_PIE = ITEMS.register("sweet_berry_pie",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(8).saturationMod(4.8f).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
 
-
-
+    public static final RegistryObject<Item> APPLE_PIE = ITEMS.register("apple_pie",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(8).saturationMod(4.8f).build()))
+                    .tab(ItemGroup.TAB_FOOD)));
 
     public static void register(IEventBus eventBus)
     {
