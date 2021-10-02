@@ -114,12 +114,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.INK_SAC)
                 .requires(Items.WHEAT)
                 .requires(Items.BOWL)
-                .unlockedBy("has_item", has(Items.COOKED_SALMON))
+                .unlockedBy("has_item", has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.RICE_BOWL.get())
-                .requires(ModItems.RICE_SHOOTS.get())
-                .requires(Items.BOWL)
+        ShapedRecipeBuilder.shaped(ModItems.RICE_BOWL.get())
+                .define('R', ModItems.RICE_BOWL.get())
+                .define('B', Items.BOWL)
+                .pattern("RRR")
+                .pattern(" B ")
                 .unlockedBy("has_item", has(ModItems.RICE_SHOOTS.get()))
                 .save(consumer);
 

@@ -34,10 +34,14 @@ public class ModItemModelProvider extends ItemModelProvider
     builder(itemGenerated, "banana_bread");
     builder(itemGenerated, "sheperds_pie");
     builder(itemGenerated, "chicken_pot_pie");
+    builder(itemGenerated, "squid_ink_pasta");
     builder(itemGenerated, "pumpkin_soup");
     builder(itemGenerated, "sweet_berry_cookie");
     builder(itemGenerated, "bamboo_cup");
+    builder(itemGenerated, "chicken_noodle_soup");
+    builder(itemGenerated, "fish_soup");
     builder(itemGenerated, "rice_shoots");
+    builder(itemGenerated, "rice_bowl");
 }
 
     private ItemModelBuilder builder(ModelFile itemGenerated, String name) {
