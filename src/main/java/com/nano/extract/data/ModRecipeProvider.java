@@ -16,8 +16,9 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
+    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
 
+    {
         // GENERAL RECIPES
         ShapedRecipeBuilder.shaped(ModBlocks.JUICER.get())
                 .define('P', Items.PISTON)
@@ -56,7 +57,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.EGG)
                 .unlockedBy("has_item", has(Items.APPLE))
                 .save(consumer);
-    }
+
+        ShapelessRecipeBuilder.shapeless(ModItems.SWEET_BERRY_COOKIE.get())
+                .requires(Items.SWEET_BERRIES)
+                .requires(Items.WHEAT, 2)
+                .unlockedBy("has_item", has(Items.SWEET_BERRIES))
+                .save(consumer);
+            }
 
     private static ResourceLocation modId(String path) {
         return new ResourceLocation(ModMain.MOD_ID, path);
