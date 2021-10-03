@@ -40,7 +40,9 @@ public class ModItemModelProvider extends ItemModelProvider
     builder(itemGenerated, "bamboo_cup");
     builder(itemGenerated, "chicken_noodle_soup");
     builder(itemGenerated, "fish_soup");
+    builder(itemGenerated, "salmon_sushi");
     builder(itemGenerated, "rice_shoots");
+    builder(itemGenerated, "stuffed_mushroom");
     builder(itemGenerated, "rice_bowl");
 }
 

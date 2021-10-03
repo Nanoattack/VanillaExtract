@@ -1,17 +1,23 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:salmon"
-    },
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "K",
+    "S",
+    "R"
+  ],
+  "key": {
+    "R": {
       "item": "extract:rice_shoots"
     },
-    {
+    "S": {
+      "item": "minecraft:salmon"
+    },
+    "K": {
       "item": "minecraft:dried_kelp"
     }
-  ],
+  },
   "result": {
-    "item": "extract:salmon_sushi"
+    "item": "extract:salmon_sushi",
+    "count": 3
   }
 }

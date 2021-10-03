@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:salmon"
+      "item": "minecraft:cooked_salmon"
     },
     {
       "item": "minecraft:ink_sac"

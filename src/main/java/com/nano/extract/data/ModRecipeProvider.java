@@ -44,7 +44,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(ModItems.BAMBOO_CUP.get()))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.SWEET_BERRY_PIE.get())
+        ShapelessRecipeBuilder.shapeless(ModItems.SWEET_BERRY_PIE.get(), 8)
                 .requires(Items.SUGAR)
                 .requires(Items.SWEET_BERRIES)
                 .requires(Items.EGG)
@@ -101,7 +101,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(ModItems.CHICKEN_NOODLE_SOUP.get())
-                .requires(Items.CHICKEN)
+                .requires(Items.COOKED_CHICKEN)
                 .requires(Items.BROWN_MUSHROOM)
                 .requires(Items.CARROT)
                 .requires(Items.WHEAT)
@@ -110,7 +110,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(ModItems.SQUID_INK_PASTA.get())
-                .requires(Items.SALMON)
+                .requires(Items.COOKED_SALMON)
                 .requires(Items.INK_SAC)
                 .requires(Items.WHEAT)
                 .requires(Items.BOWL)
@@ -118,7 +118,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(ModItems.RICE_BOWL.get())
-                .define('R', ModItems.RICE_BOWL.get())
+                .define('R', ModItems.RICE_SHOOTS.get())
                 .define('B', Items.BOWL)
                 .pattern("RRR")
                 .pattern(" B ")
@@ -133,14 +133,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(Items.COOKED_COD))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.SALMON_SUSHI.get())
-                .requires(Items.SALMON)
-                .requires(ModItems.RICE_SHOOTS.get())
-                .requires(Items.DRIED_KELP)
+        ShapedRecipeBuilder.shaped(ModItems.SALMON_SUSHI.get(), 3)
+                .define('R', ModItems.RICE_SHOOTS.get())
+                .define('S', Items.SALMON)
+                .define('K', Items.DRIED_KELP)
+                .pattern("K")
+                .pattern("S")
+                .pattern("R")
                 .unlockedBy("has_item", has(Items.SALMON))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.STUFFED_MUSHROOM.get())
+        ShapedRecipeBuilder.shaped(ModItems.STUFFED_MUSHROOM.get(), 8)
                 .define('M', Items.BROWN_MUSHROOM)
                 .define('B', Items.MILK_BUCKET)
                 .pattern("MMM")
