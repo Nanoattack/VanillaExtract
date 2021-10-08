@@ -23,11 +23,11 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(ModBlocks.JUICER.get())
                 .define('P', Items.PISTON)
                 .define('C', Items.COBBLESTONE)
-                .define('B', ItemTags.BUTTONS)
-                .define('R', Items.REDSTONE)
-                .pattern("CBC")
-                .pattern("CRC")
+                .define('G', Items.GLASS_PANE)
+                .define('H', Items.HOPPER)
                 .pattern("CPC")
+                .pattern("CHC")
+                .pattern("CGC")
                 .unlockedBy("has_item", has(Items.PISTON))
                 .save(consumer);
 
