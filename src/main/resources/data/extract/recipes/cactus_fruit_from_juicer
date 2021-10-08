@@ -1,0 +1,14 @@
+{
+  "type": "extract:juicing",
+  "ingredients": [
+    {
+      "item": "extract:cactus_fruit"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    }
+  ],
+  "output": {
+    "item": "extract:cactus_fruit_juice"
+  }
+}

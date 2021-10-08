@@ -3,6 +3,7 @@ package com.nano.extract;
 import com.nano.extract.block.ModBlocks;
 import com.nano.extract.container.ModContainers;
 import com.nano.extract.data.DataGenerators;
+import com.nano.extract.data.recipes.ModRecipeTypes;
 import com.nano.extract.events.JungleLeavesConverterModifier;
 import com.nano.extract.events.ModEvents;
 import com.nano.extract.item.ModItems;
@@ -49,6 +50,7 @@ public class ModMain
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
         ModStructures.register(eventBus);
+        ModRecipeTypes.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(new JungleLeavesConverterModifier.Serializer());
         MinecraftForge.EVENT_BUS.register(new ModEvents());

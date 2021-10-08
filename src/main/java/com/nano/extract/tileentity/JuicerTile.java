@@ -1,10 +1,14 @@
 package com.nano.extract.tileentity;
 
+import com.nano.extract.data.recipes.JuicerRecipe;
+import com.nano.extract.data.recipes.ModRecipeTypes;
 import com.nano.extract.item.ModItems;
 import net.minecraft.block.BlockState;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
@@ -16,8 +20,9 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Optional;
 
-public class JuicerTile extends TileEntity {
+public class JuicerTile extends TileEntity implements ITickableTileEntity {
 
     private final ItemStackHandler itemHandler =  createHandler();
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(()-> itemHandler);
@@ -109,8 +114,6 @@ public class JuicerTile extends TileEntity {
 
     public void AfterJuiceSound() {
         //Top Slot Check
-        boolean hasCactusInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(0).getItem() == ModItems.CACTUS_FRUIT.get();
         boolean hasChorusInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
                 && this.itemHandler.getStackInSlot(0).getItem() == Items.CHORUS_FRUIT;
         boolean hasAppleInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
@@ -129,17 +132,9 @@ public class JuicerTile extends TileEntity {
         boolean hasMilkInSecondSlot = this.itemHandler.getStackInSlot(1).getCount() > 0
                 && this.itemHandler.getStackInSlot(1).getItem() == ModItems.MILK_CUP.get();
 
-        //Prickly Pear Juice
-        if (hasCupInSecondSlot && hasCactusInFirstSlot)
-        {
-            this.itemHandler.getStackInSlot(0).shrink(1);
-            this.itemHandler.getStackInSlot(1).shrink(1);
-
-            this.itemHandler.insertItem(1, new ItemStack(ModItems.CACTUS_FRUIT_JUICE.get()), false);
-        }
         //Apple Juice
 
-            else if (hasCupInSecondSlot && hasAppleInFirstSlot)
+            if (hasCupInSecondSlot && hasAppleInFirstSlot)
         {
             this.itemHandler.getStackInSlot(0).shrink(1);
             this.itemHandler.getStackInSlot(1).shrink(1);
@@ -190,5 +185,37 @@ public class JuicerTile extends TileEntity {
 
             this.itemHandler.insertItem(1, new ItemStack(ModItems.CHOCOLATE_MILK.get()), false);
         }
+    }
+
+    public void craft()
+    {
+        Inventory inv = new Inventory(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inv.setItem(i, itemHandler.getStackInSlot(i));
+        }
+
+        Optional<JuicerRecipe> recipe = level.getRecipeManager()
+                .getRecipeFor(ModRecipeTypes.JUICER_RECIPE, inv, level);
+
+        recipe.ifPresent(iRecipe -> {
+            ItemStack output = iRecipe.getResultItem();
+
+            craftTheItem(output);
+
+            setChanged();
+        });
+    }
+
+    private void craftTheItem(ItemStack output) {
+        itemHandler.extractItem(0, 1, false);
+        itemHandler.extractItem(1, 1, false);
+        itemHandler.insertItem(1, output, false);
+    }
+    @Override
+    public void tick() {
+    if(level.isClientSide)
+        return;;
+
+        craft();
     }
 }
