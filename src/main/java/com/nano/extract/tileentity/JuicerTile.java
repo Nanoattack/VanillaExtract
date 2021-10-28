@@ -4,6 +4,7 @@ import com.nano.extract.data.recipes.JuicerRecipe;
 import com.nano.extract.data.recipes.ModRecipeTypes;
 import com.nano.extract.item.ModItems;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -12,6 +13,8 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -105,81 +108,6 @@ public class JuicerTile extends TileEntity implements ITickableTileEntity {
         return super.getCapability(cap, side);
     }
 
-    public void AfterJuiceSound() {
-        //Top Slot Check
-        boolean hasChorusInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(0).getItem() == Items.CHORUS_FRUIT;
-        boolean hasAppleInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(0).getItem() == Items.APPLE;
-        boolean hasMelonInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(0).getItem() == Items.MELON_SLICE;
-        boolean hasSweetBerryInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(0).getItem() == Items.SWEET_BERRIES;
-        boolean hasCarrotInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(0).getItem() == Items.CARROT;
-        boolean hasCocoaInFirstSlot = this.itemHandler.getStackInSlot(0).getCount() > 0
-                && this.itemHandler.getStackInSlot(0).getItem() == Items.COCOA_BEANS;
-        //Bottom Slot Check
-        boolean hasCupInSecondSlot = this.itemHandler.getStackInSlot(1).getCount() > 0
-                && this.itemHandler.getStackInSlot(1).getItem() == ModItems.BAMBOO_CUP.get();
-        boolean hasMilkInSecondSlot = this.itemHandler.getStackInSlot(1).getCount() > 0
-                && this.itemHandler.getStackInSlot(1).getItem() == ModItems.MILK_CUP.get();
-
-        //Apple Juice
-
-            if (hasCupInSecondSlot && hasAppleInFirstSlot)
-        {
-            this.itemHandler.getStackInSlot(0).shrink(1);
-            this.itemHandler.getStackInSlot(1).shrink(1);
-
-            this.itemHandler.insertItem(1, new ItemStack(ModItems.APPLE_JUICE.get()), false);
-        }
-        //Carrot Juice
-
-            else if (hasCupInSecondSlot && hasCarrotInFirstSlot) {
-            this.itemHandler.getStackInSlot(0).shrink(1);
-            this.itemHandler.getStackInSlot(1).shrink(1);
-
-            this.itemHandler.insertItem(1, new ItemStack(ModItems.CARROT_JUICE.get()), false);
-        }
-        //Sweet Berry Juice
-
-            else if (hasCupInSecondSlot && hasSweetBerryInFirstSlot)
-        {
-            this.itemHandler.getStackInSlot(0).shrink(1);
-            this.itemHandler.getStackInSlot(1).shrink(1);
-
-            this.itemHandler.insertItem(1, new ItemStack(ModItems.SWEET_BERRY_JUICE.get()), false);
-        }
-        //Melon Juice
-
-            else if (hasCupInSecondSlot && hasMelonInFirstSlot)
-        {
-            this.itemHandler.getStackInSlot(0).shrink(1);
-            this.itemHandler.getStackInSlot(1).shrink(1);
-
-            this.itemHandler.insertItem(1, new ItemStack(ModItems.MELON_JUICE.get()), false);
-        }
-        //Chorus Juice
-
-        else if (hasCupInSecondSlot && hasChorusInFirstSlot)
-        {
-            this.itemHandler.getStackInSlot(0).shrink(1);
-            this.itemHandler.getStackInSlot(1).shrink(1);
-
-            this.itemHandler.insertItem(1, new ItemStack(ModItems.CHORUS_FRUIT_JUICE.get()), false);
-        }
-        //Chocolate Milk
-
-            else if (hasMilkInSecondSlot && hasCocoaInFirstSlot)
-        {
-            this.itemHandler.getStackInSlot(0).shrink(1);
-            this.itemHandler.getStackInSlot(1).shrink(1);
-
-            this.itemHandler.insertItem(1, new ItemStack(ModItems.CHOCOLATE_MILK.get()), false);
-        }
-    }
-
     public void craft()
     {
         Inventory inv = new Inventory(itemHandler.getSlots());
@@ -196,6 +124,10 @@ public class JuicerTile extends TileEntity implements ITickableTileEntity {
             craftTheItem(output);
 
             setChanged();
+
+            level.playSound((PlayerEntity)null, getBlockPos(), SoundEvents.PISTON_EXTEND, SoundCategory.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+            level.playSound((PlayerEntity)null, getBlockPos(), SoundEvents.COW_MILK, SoundCategory.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+
         });
     }
 

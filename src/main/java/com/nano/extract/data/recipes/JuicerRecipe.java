@@ -19,6 +19,7 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 import javax.annotation.Nullable;
 
 public class JuicerRecipe implements IJuicerRecipe
+
 {
     private final ResourceLocation id;
     private final ItemStack output;
@@ -32,12 +33,11 @@ public class JuicerRecipe implements IJuicerRecipe
     }
 
     @Override
-    public boolean matches(IInventory inventory, World world)
+    public boolean matches(IInventory inv, World worldIn)
     {
-        // Checks for correct focus (Glass Pane)
-        if(recipeItems.get(0).test(inventory.getItem(0)))
+        if(recipeItems.get(0).test(inv.getItem(0)))
         {
-            return recipeItems.get(1).test(inventory.getItem(1));
+            return recipeItems.get(1).test(inv.getItem(1));
         }
 
         return false;
@@ -60,7 +60,7 @@ public class JuicerRecipe implements IJuicerRecipe
 
     @Override
     public ItemStack getResultItem() {
-        return output;
+        return output.copy();
     }
 
     public ItemStack getIcon() {

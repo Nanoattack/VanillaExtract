@@ -27,7 +27,7 @@ public class ModBlocks
             ()-> new JuicerBlock(AbstractBlock.Properties.of(Material.METAL).harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops().strength(4f,10f)));
 
     public static final RegistryObject<Block> OPUNTIA_CACTUS = BLOCKS.register("opuntia_cactus",
-            ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.BAMBOO_SAPLING).noOcclusion()));
+            ()-> new OpuntiaCactus(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.BAMBOO_SAPLING).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> RICE = BLOCKS.register("rice_crop",
             () -> new RiceBlock(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.CROP).noOcclusion().noCollission()));

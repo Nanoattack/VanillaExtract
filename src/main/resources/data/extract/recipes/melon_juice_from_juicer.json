@@ -1,0 +1,14 @@
+{
+  "type": "extract:juicing",
+  "ingredients": [
+    {
+      "item": "minecraft:melon_slice"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    }
+  ],
+  "output": {
+    "item": "extract:melon_juice"
+  }
+}

@@ -38,6 +38,14 @@ public class JuicerBlock extends Block {
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
+    public static void PlayJuiceSound(BlockState state, World worldIn, BlockPos pos,
+                                      PlayerEntity player, Hand handIn)
+    {
+        worldIn.playSound((PlayerEntity)null, pos, SoundEvents.PISTON_EXTEND, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+        worldIn.playSound((PlayerEntity)null, pos, SoundEvents.COW_MILK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+
+    }
+
     @Override
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos,
                                              PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
@@ -45,22 +53,17 @@ public class JuicerBlock extends Block {
             TileEntity tileEntity = worldIn.getBlockEntity(pos);
 
             if(!player.isCrouching()) {
-                if(tileEntity instanceof JuicerTile) {
+                if(tileEntity instanceof JuicerTile)
+                {
                     INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
 
                     NetworkHooks.openGui(((ServerPlayerEntity)player), containerProvider, tileEntity.getBlockPos());
-                } else {
+                }
+                else {
                     throw new IllegalStateException("Our Container provider is missing!");
-                }
-            } else {
-                if(tileEntity instanceof JuicerTile) {
-                    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.PISTON_EXTEND, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-                    worldIn.playSound((PlayerEntity)null, pos, SoundEvents.COW_MILK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-
-                    ((JuicerTile) tileEntity).AfterJuiceSound();
-                }
-                }
+                     }
             }
+        }
         return ActionResultType.SUCCESS;
     }
 
