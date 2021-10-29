@@ -2,7 +2,6 @@ package com.nano.extract;
 
 import com.nano.extract.block.ModBlocks;
 import com.nano.extract.container.ModContainers;
-import com.nano.extract.data.DataGenerators;
 import com.nano.extract.data.recipes.ModRecipeTypes;
 import com.nano.extract.events.JungleLeavesConverterModifier;
 import com.nano.extract.events.ModEvents;

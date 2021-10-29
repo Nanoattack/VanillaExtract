@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "CBC",
-    "CRC",
-    "CPC"
+    "CPC",
+    "CHC",
+    "CGC"
   ],
   "key": {
     "P": {
@@ -12,11 +12,11 @@
     "C": {
       "item": "minecraft:cobblestone"
     },
-    "B": {
-      "tag": "minecraft:buttons"
+    "G": {
+      "item": "minecraft:glass_pane"
     },
-    "R": {
-      "item": "minecraft:redstone"
+    "H": {
+      "item": "minecraft:hopper"
     }
   },
   "result": {

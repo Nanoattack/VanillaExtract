@@ -1,0 +1,26 @@
+
+{
+  "display": {
+    "icon": {
+      "item": "extract:juicer"
+    },
+    "title": "Juice Me Up",
+    "description": "Craft a juicer",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "extract:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "extract:juicer"
+          }
+        ]
+      }
+    }
+  }
+}

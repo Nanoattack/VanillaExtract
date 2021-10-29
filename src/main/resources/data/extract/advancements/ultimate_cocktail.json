@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "extract:ultimate_cocktail"
+    },
+    "title": "Juiced Up",
+    "description": "Discover and consume the ultimate cocktail",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "extract:juicer",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "extract:ultimate_cocktail"
+          ]
+        }
+      }
+    }
+  }
+}

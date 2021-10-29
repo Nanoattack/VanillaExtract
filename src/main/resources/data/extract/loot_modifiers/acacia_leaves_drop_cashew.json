@@ -1,0 +1,11 @@
+{
+  "conditions": [
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:acacia_leaves"
+    }
+  ],
+  "item": "minecraft:stick",
+  "count": 1,
+  "replacement": "extract:cashew_apple"
+}

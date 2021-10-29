@@ -44,7 +44,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(ModItems.BAMBOO_CUP.get()))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.SWEET_BERRY_PIE.get(), 8)
+        ShapelessRecipeBuilder.shapeless(ModItems.SWEET_BERRY_PIE.get())
                 .requires(Items.SUGAR)
                 .requires(Items.SWEET_BERRIES)
                 .requires(Items.EGG)
@@ -93,7 +93,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(ModItems.BANANA.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.SWEET_BERRY_COOKIE.get())
+        ShapedRecipeBuilder.shaped(ModItems.SWEET_BERRY_COOKIE.get(), 8)
                 .define('S', Items.SWEET_BERRIES)
                 .define('W', Items.WHEAT)
                 .pattern("WSW")

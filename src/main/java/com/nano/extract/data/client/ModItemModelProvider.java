@@ -19,6 +19,7 @@ public class ModItemModelProvider extends ItemModelProvider
     ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
     // General
 
+    builder(itemGenerated, "vanilla_flower");
     builder(itemGenerated, "cactus_fruit");
     builder(itemGenerated, "cactus_fruit_juice");
     builder(itemGenerated, "carrot_juice");
@@ -44,6 +45,9 @@ public class ModItemModelProvider extends ItemModelProvider
     builder(itemGenerated, "rice_shoots");
     builder(itemGenerated, "stuffed_mushroom");
     builder(itemGenerated, "rice_bowl");
+    builder(itemGenerated, "ultimate_cocktail");
+    builder(itemGenerated, "cashew_apple");
+    builder(itemGenerated, "cashew_nut");
 }
 
     private ItemModelBuilder builder(ModelFile itemGenerated, String name) {

@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe>
 {
-    public final ResourceLocation UID = new ResourceLocation(ModMain.MOD_ID, "juicing");
+    public final static ResourceLocation UID = new ResourceLocation(ModMain.MOD_ID, "juicing");
 
     public final ResourceLocation TEXTURE = new ResourceLocation(ModMain.MOD_ID, "textures/gui/juicer_gui.png");
 

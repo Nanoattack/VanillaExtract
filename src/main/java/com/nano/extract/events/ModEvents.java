@@ -19,6 +19,10 @@ public class ModEvents
                 new JungleLeavesConverterModifier.Serializer().setRegistryName
                         (new ResourceLocation(ModMain.MOD_ID,"jungle_leaves_drop_banana"))
         );
+        event.getRegistry().register(
+        new AcaciaLeavesConverterModifier.Serializer().setRegistryName
+                (new ResourceLocation(ModMain.MOD_ID,"acacia_leaves_drop_cashew"))
+        );
     }
 }
 

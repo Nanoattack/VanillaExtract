@@ -15,6 +15,9 @@ public class ModItems
 {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ModMain.MOD_ID);
 
+    public static final RegistryObject<Item> VANILLA_FLOWER = ITEMS.register("vanilla_flower",
+            () -> new Item(new Item.Properties()
+                    .tab(ItemGroup.TAB_MISC)));
 
     public static final RegistryObject<Item> CACTUS_FRUIT = ITEMS.register("cactus_fruit",
             () -> new BlockItem(ModBlocks.OPUNTIA_CACTUS.get(), new Item.Properties()
@@ -30,40 +33,57 @@ public class ModItems
                     .food((new Food.Builder().nutrition(4).saturationMod(2.4f).build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
+    public static final RegistryObject<Item> BAMBOO_CUP = ITEMS.register("bamboo_cup",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(16)
+                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
+
     public static final RegistryObject<Item> CACTUS_FRUIT_JUICE = ITEMS.register("cactus_fruit_juice",
             () -> new JuiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.FIRE_RESISTANCE, 200, 0), 1f).build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(()-> new EffectInstance(Effects.FIRE_RESISTANCE, 200, 0), 1f)
+                    .build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> APPLE_JUICE = ITEMS.register("apple_juice",
             () -> new JuiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.MOVEMENT_SPEED, 200, 0), 1f).build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(()-> new EffectInstance(Effects.MOVEMENT_SPEED, 200, 0), 1f)
+                    .build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> CARROT_JUICE = ITEMS.register("carrot_juice",
             () -> new JuiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.NIGHT_VISION, 200, 0), 1f).build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(()-> new EffectInstance(Effects.NIGHT_VISION, 200, 0), 1f)
+                    .build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> MELON_JUICE = ITEMS.register("melon_juice",
             () -> new JuiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.GLOWING, 200, 0), 1f).build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(()-> new EffectInstance(Effects.GLOWING, 200, 0), 1f)
+                    .build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> SWEET_BERRY_JUICE = ITEMS.register("sweet_berry_juice",
             () -> new JuiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.JUMP, 200, 0), 1f).build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(()-> new EffectInstance(Effects.JUMP, 200, 0), 1f)
+                    .build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> CHORUS_FRUIT_JUICE = ITEMS.register("chorus_fruit_juice",
             () -> new JuiceItem(new Item.Properties()
                     .stacksTo(8)
-                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.LEVITATION, 200, 0), 1f).build()))
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(()-> new EffectInstance(Effects.LEVITATION, 200, 0), 1f)
+                    .build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> MILK_CUP = ITEMS.register("milk_cup",
@@ -78,9 +98,19 @@ public class ModItems
                     .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.DIG_SPEED, 200, 0), 1f).build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
-    public static final RegistryObject<Item> BAMBOO_CUP = ITEMS.register("bamboo_cup",
-            () -> new Item(new Item.Properties()
-                    .stacksTo(16)
+    public static final RegistryObject<Item> ULTIMATE_COCKTAIL = ITEMS.register("ultimate_cocktail",
+            () -> new TooltipJuiceItem(new Item.Properties()
+                    .stacksTo(8)
+                    .rarity(Rarity.EPIC)
+                    .food((new Food.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(()-> new EffectInstance(Effects.DIG_SPEED, 200, 0), 1f)
+                    .effect(()-> new EffectInstance(Effects.LEVITATION, 200, 0), 1f)
+                    .effect(()-> new EffectInstance(Effects.JUMP, 200, 0), 1f)
+                    .effect(()-> new EffectInstance(Effects.GLOWING, 200, 0), 1f)
+                    .effect(()-> new EffectInstance(Effects.NIGHT_VISION, 200, 0), 1f)
+                    .effect(()-> new EffectInstance(Effects.MOVEMENT_SPEED, 200, 0), 1f)
+                    .effect(()-> new EffectInstance(Effects.FIRE_RESISTANCE, 200, 0), 1f)
+                    .build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> SWEET_BERRY_PIE = ITEMS.register("sweet_berry_pie",
@@ -152,6 +182,16 @@ public class ModItems
     public static final RegistryObject<Item> STUFFED_MUSHROOM = ITEMS.register("stuffed_mushroom",
             () -> new Item(new Item.Properties()
                     .food((new Food.Builder().nutrition(3).saturationMod(1f).build()))
+                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
+
+    public static final RegistryObject<Item> CASHEW_APPLE = ITEMS.register("cashew_apple",
+            () -> new CashewItem(new Item.Properties()
+                    .food((new Food.Builder().nutrition(4).saturationMod(2.4f).build()))
+                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
+
+    public static final RegistryObject<Item> CASHEW = ITEMS.register("cashew_nut",
+            () -> new Item(new Item.Properties()
+                    .food((new Food.Builder().nutrition(2).saturationMod(0.4f).build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static void register(IEventBus eventBus)
