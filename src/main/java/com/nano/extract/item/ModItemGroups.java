@@ -1,5 +1,6 @@
 package com.nano.extract.item;
 
+import com.nano.extract.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -21,6 +22,15 @@ public class ModItemGroups
         public ItemStack makeIcon()
         {
             return new ItemStack(ModItems.ELDER_GUARDIAN_SPIKE.get());
+        }
+    };
+
+    public static final ItemGroup MOD_BLOCK_GROUP = new ItemGroup("vanillaextractblock")
+    {
+        @Override
+        public ItemStack makeIcon()
+        {
+            return new ItemStack(ModBlocks.BAMBOO_THATCH.get());
         }
     };
 }

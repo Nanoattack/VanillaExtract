@@ -18,6 +18,13 @@ public class ModItemModelProvider extends ItemModelProvider
     withExistingParent("bamboo_thatch", modLoc("block/bamboo_thatch"));
     withExistingParent("tiled_bamboo_thatch", modLoc("block/tiled_bamboo_thatch"));
     withExistingParent("stripped_bamboo_thatch", modLoc("block/stripped_bamboo_thatch"));
+    withExistingParent("bamboo_thatch_stairs", modLoc("block/bamboo_thatch_stairs"));
+    withExistingParent("bamboo_thatch_slab", modLoc("block/bamboo_thatch_slab"));
+    withExistingParent("bamboo_thatch_fence_gate", modLoc("block/bamboo_thatch_fence_gate"));
+    withExistingParent("bamboo_thatch_fence", modLoc("block/bamboo_thatch_fence_inventory"));
+    withExistingParent("bamboo_thatch_button", modLoc("block/bamboo_thatch_button_inventory"));
+    withExistingParent("bamboo_thatch_pressure_plate", modLoc("block/bamboo_thatch_pressure_plate"));
+    withExistingParent("bamboo_thatch_trapdoor", modLoc("block/bamboo_thatch_trapdoor_bottom"));
 
     ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
     // General

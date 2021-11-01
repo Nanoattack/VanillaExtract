@@ -93,6 +93,8 @@ public class ModMain
 
         RenderTypeLookup.setRenderLayer(ModBlocks.OPUNTIA_CACTUS.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.RICE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BAMBOO_THATCH_TRAPDOOR.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BAMBOO_THATCH_DOOR.get(), RenderType.cutout());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

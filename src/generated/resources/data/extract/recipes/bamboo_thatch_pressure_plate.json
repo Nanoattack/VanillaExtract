@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "extract:bamboo_thatch"
+    }
+  },
+  "result": {
+    "item": "extract:bamboo_thatch_pressure_plate"
+  }
+}

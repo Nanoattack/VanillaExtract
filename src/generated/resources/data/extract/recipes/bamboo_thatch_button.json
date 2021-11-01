@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extract:bamboo_thatch"
+    }
+  ],
+  "result": {
+    "item": "extract:bamboo_thatch_button"
+  }
+}

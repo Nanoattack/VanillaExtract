@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BbB",
+    "BbB"
+  ],
+  "key": {
+    "B": {
+      "item": "extract:bamboo_thatch"
+    },
+    "b": {
+      "item": "minecraft:bamboo"
+    }
+  },
+  "result": {
+    "item": "extract:bamboo_thatch_fence",
+    "count": 3
+  }
+}

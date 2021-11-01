@@ -34,11 +34,29 @@ public class ModBlockLootTables extends BlockLootTables
 
         dropSelf(ModBlocks.STRIPPED_BAMBOO_THATCH.get());
 
+        dropSelf(ModBlocks.BAMBOO_THATCH_STAIRS.get());
+
+        dropSelf(ModBlocks.BAMBOO_THATCH_SLAB.get());
+
+        dropSelf(ModBlocks.BAMBOO_THATCH_FENCE.get());
+
+        dropSelf(ModBlocks.BAMBOO_THATCH_FENCE_GATE.get());
+
+        dropSelf(ModBlocks.BAMBOO_THATCH_BUTTON.get());
+
+        dropSelf(ModBlocks.BAMBOO_THATCH_PRESSURE_PLATE.get());
+
+        this.add(ModBlocks.BAMBOO_THATCH_DOOR.get(), BlockLootTables::createDoorTable);
+
+        dropSelf(ModBlocks.BAMBOO_THATCH_TRAPDOOR.get());
+
         this.add(ModBlocks.OPUNTIA_CACTUS.get(), (p_241171_0_) -> {
             return applyExplosionDecay(p_241171_0_, LootTable.lootTable().withPool(LootPool.lootPool().when(BlockStateProperty.hasBlockStateProperties(ModBlocks.OPUNTIA_CACTUS.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OpuntiaCactus.AGE, 3))).add(ItemLootEntry.lootTableItem(ModItems.CACTUS_FRUIT.get())).apply(SetCount.setCount(RandomValueRange.between(2.0F, 3.0F))).apply(ApplyBonus.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().when(BlockStateProperty.hasBlockStateProperties(ModBlocks.OPUNTIA_CACTUS.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OpuntiaCactus.AGE, 2))).add(ItemLootEntry.lootTableItem(ModItems.CACTUS_FRUIT.get())).apply(SetCount.setCount(RandomValueRange.between(1.0F, 2.0F))).apply(ApplyBonus.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))));});
 
         ILootCondition.IBuilder ilootcondition$ibuilder3 = BlockStateProperty.hasBlockStateProperties(ModBlocks.RICE.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PotatoBlock.AGE, 7));
         this.add(ModBlocks.RICE.get(), applyExplosionDecay(ModBlocks.RICE.get(), LootTable.lootTable().withPool(LootPool.lootPool().add(ItemLootEntry.lootTableItem(ModItems.RICE_SHOOTS.get()))).withPool(LootPool.lootPool().when(ilootcondition$ibuilder3).add(ItemLootEntry.lootTableItem(ModItems.RICE_SHOOTS.get()).apply(ApplyBonus.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3)))).withPool(LootPool.lootPool().when(ilootcondition$ibuilder3))));
+
+
 
     }
         @Override

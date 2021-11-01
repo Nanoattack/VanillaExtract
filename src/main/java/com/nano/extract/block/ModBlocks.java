@@ -4,6 +4,7 @@ import com.nano.extract.ModMain;
 import com.nano.extract.block.custom.JuicerBlock;
 import com.nano.extract.block.custom.OpuntiaCactus;
 import com.nano.extract.block.custom.RiceBlock;
+import com.nano.extract.item.ModItemGroups;
 import com.nano.extract.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -48,13 +49,38 @@ public class ModBlocks
             () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS)));
 */
 public static final RegistryObject<Block> BAMBOO_THATCH = registerBlock("bamboo_thatch",
-        () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
+        () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
 
 public static final RegistryObject<Block> TILED_BAMBOO_THATCH = registerBlock("tiled_bamboo_thatch",
         () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
 
     public static final RegistryObject<Block> STRIPPED_BAMBOO_THATCH = registerBlock("stripped_bamboo_thatch",
-            () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
+
+    public static final RegistryObject<StairsBlock> BAMBOO_THATCH_STAIRS = registerBlock("bamboo_thatch_stairs",
+            () -> new StairsBlock(()-> BAMBOO_THATCH.get().defaultBlockState(),
+                    AbstractBlock.Properties.copy(Blocks.OAK_STAIRS).sound(SoundType.BAMBOO)));
+
+    public static final RegistryObject<SlabBlock> BAMBOO_THATCH_SLAB = registerBlock("bamboo_thatch_slab",
+            () -> new SlabBlock(AbstractBlock.Properties.copy(Blocks.OAK_SLAB).sound(SoundType.BAMBOO)));
+
+    public static final RegistryObject<FenceBlock> BAMBOO_THATCH_FENCE = registerBlock("bamboo_thatch_fence",
+            () -> new FenceBlock(AbstractBlock.Properties.copy(Blocks.OAK_FENCE).sound(SoundType.BAMBOO)));
+
+    public static final RegistryObject<FenceGateBlock> BAMBOO_THATCH_FENCE_GATE = registerBlock("bamboo_thatch_fence_gate",
+            () -> new FenceGateBlock(AbstractBlock.Properties.copy(Blocks.OAK_FENCE_GATE).sound(SoundType.BAMBOO)));
+
+    public static final RegistryObject<WoodButtonBlock> BAMBOO_THATCH_BUTTON = registerBlock("bamboo_thatch_button",
+            () -> new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.BAMBOO).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> BAMBOO_THATCH_PRESSURE_PLATE = registerBlock("bamboo_thatch_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AbstractBlock.Properties.copy(Blocks.OAK_PRESSURE_PLATE).sound(SoundType.BAMBOO).noCollission()));
+
+    public static final RegistryObject<TrapDoorBlock> BAMBOO_THATCH_TRAPDOOR = registerBlock("bamboo_thatch_trapdoor",
+            () -> new TrapDoorBlock(AbstractBlock.Properties.copy(Blocks.OAK_TRAPDOOR).sound(SoundType.BAMBOO).noOcclusion()));
+
+    public static final RegistryObject<Block> BAMBOO_THATCH_DOOR = registerBlock("bamboo_thatch_door",
+            () -> new DoorBlock(AbstractBlock.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.BAMBOO).noOcclusion()));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
@@ -66,7 +92,7 @@ public static final RegistryObject<Block> TILED_BAMBOO_THATCH = registerBlock("t
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block)
     {
         ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(),
-                new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+                new Item.Properties().tab(ModItemGroups.MOD_BLOCK_GROUP)));
     }
     public static void register(IEventBus eventBus)
     {

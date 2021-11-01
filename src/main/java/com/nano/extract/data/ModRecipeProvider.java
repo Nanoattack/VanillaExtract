@@ -278,6 +278,46 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(Items.BAMBOO))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH_STAIRS.get(), 4)
+                .define('B', ModBlocks.BAMBOO_THATCH.get())
+                .pattern("B  ")
+                .pattern("BB ")
+                .pattern("BBB")
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH_SLAB.get(), 6)
+                .define('B', ModBlocks.BAMBOO_THATCH.get())
+                .pattern("BBB")
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH_FENCE.get(), 3)
+                .define('B', ModBlocks.BAMBOO_THATCH.get())
+                .define('b', Items.BAMBOO)
+                .pattern("BbB")
+                .pattern("BbB")
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH_FENCE_GATE.get(), 3)
+                .define('B', ModBlocks.BAMBOO_THATCH.get())
+                .define('b', Items.BAMBOO)
+                .pattern("bBb")
+                .pattern("bBb")
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModBlocks.BAMBOO_THATCH_BUTTON.get())
+                .requires(ModBlocks.BAMBOO_THATCH.get())
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH_PRESSURE_PLATE.get())
+                .define('B', ModBlocks.BAMBOO_THATCH.get())
+                .pattern("BB")
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
     }
 
     private static ResourceLocation modId(String path) {

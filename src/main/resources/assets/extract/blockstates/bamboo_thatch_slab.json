@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extract:block/bamboo_thatch_slab"
+    },
+    "type=double": {
+      "model": "extract:block/bamboo_thatch"
+    },
+    "type=top": {
+      "model": "extract:block/bamboo_thatch_slab_top"
+    }
+  }
+}

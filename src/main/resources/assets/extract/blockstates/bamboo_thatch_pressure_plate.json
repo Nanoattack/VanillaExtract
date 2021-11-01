@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "extract:block/bamboo_thatch_pressure_plate"
+    },
+    "powered=true": {
+      "model": "extract:block/bamboo_thatch_pressure_plate_down"
+    }
+  }
+}

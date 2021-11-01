@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "top": "extract:block/bamboo_thatch_door_top",
+    "bottom": "extract:block/bamboo_thatch_door_bottom"
+  }
+}
