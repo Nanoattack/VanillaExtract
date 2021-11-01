@@ -318,6 +318,21 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("BB")
                 .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH_DOOR.get(), 3)
+                .define('B', ModBlocks.BAMBOO_THATCH.get())
+                .pattern("BB")
+                .pattern("BB")
+                .pattern("BB")
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH_TRAPDOOR.get(), 2)
+                .define('B', ModBlocks.BAMBOO_THATCH.get())
+                .pattern("BBB")
+                .pattern("BBB")
+                .unlockedBy("has_item", has(ModBlocks.BAMBOO_THATCH.get()))
+                .save(consumer);
     }
 
     private static ResourceLocation modId(String path) {
