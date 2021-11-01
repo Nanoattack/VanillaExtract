@@ -1,9 +1,12 @@
 package com.nano.extract;
 
+import com.google.common.collect.ImmutableMap;
 import com.nano.extract.block.ModBlocks;
 import com.nano.extract.container.ModContainers;
 import com.nano.extract.data.recipes.ModRecipeTypes;
+import com.nano.extract.events.AcaciaLeavesConverterModifier;
 import com.nano.extract.events.JungleLeavesConverterModifier;
+import com.nano.extract.events.LootInjector;
 import com.nano.extract.events.ModEvents;
 import com.nano.extract.item.ModItems;
 import com.nano.extract.screen.JuicerScreen;
@@ -14,6 +17,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.item.AxeItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -52,6 +56,8 @@ public class ModMain
         ModRecipeTypes.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(new JungleLeavesConverterModifier.Serializer());
+        MinecraftForge.EVENT_BUS.register(new AcaciaLeavesConverterModifier.Serializer());
+        MinecraftForge.EVENT_BUS.register(new LootInjector());
         MinecraftForge.EVENT_BUS.register(new ModEvents());
 
         eventBus.addListener(this::setup);
@@ -69,6 +75,11 @@ public class ModMain
     private void setup(final FMLCommonSetupEvent event)
     {
         // some preinit code
+        event.enqueueWork(() ->{
+            AxeItem.STRIPABLES = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.STRIPABLES)
+                    .put(ModBlocks.BAMBOO_THATCH.get(), ModBlocks.STRIPPED_BAMBOO_THATCH.get())
+                    .build();
+        });
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }

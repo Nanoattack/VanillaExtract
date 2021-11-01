@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "extract:block/bamboo_thatch"
+    }
+  }
+}

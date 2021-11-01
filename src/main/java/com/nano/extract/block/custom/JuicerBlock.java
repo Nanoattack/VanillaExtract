@@ -38,14 +38,6 @@ public class JuicerBlock extends Block {
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
-    public static void PlayJuiceSound(BlockState state, World worldIn, BlockPos pos,
-                                      PlayerEntity player, Hand handIn)
-    {
-        worldIn.playSound((PlayerEntity)null, pos, SoundEvents.PISTON_EXTEND, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-        worldIn.playSound((PlayerEntity)null, pos, SoundEvents.COW_MILK, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-
-    }
-
     @Override
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos,
                                              PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {

@@ -28,6 +28,12 @@ public class ModBlockLootTables extends BlockLootTables
     {
         dropSelf(ModBlocks.JUICER.get());
 
+        dropSelf(ModBlocks.BAMBOO_THATCH.get());
+
+        dropSelf(ModBlocks.TILED_BAMBOO_THATCH.get());
+
+        dropSelf(ModBlocks.STRIPPED_BAMBOO_THATCH.get());
+
         this.add(ModBlocks.OPUNTIA_CACTUS.get(), (p_241171_0_) -> {
             return applyExplosionDecay(p_241171_0_, LootTable.lootTable().withPool(LootPool.lootPool().when(BlockStateProperty.hasBlockStateProperties(ModBlocks.OPUNTIA_CACTUS.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OpuntiaCactus.AGE, 3))).add(ItemLootEntry.lootTableItem(ModItems.CACTUS_FRUIT.get())).apply(SetCount.setCount(RandomValueRange.between(2.0F, 3.0F))).apply(ApplyBonus.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().when(BlockStateProperty.hasBlockStateProperties(ModBlocks.OPUNTIA_CACTUS.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OpuntiaCactus.AGE, 2))).add(ItemLootEntry.lootTableItem(ModItems.CACTUS_FRUIT.get())).apply(SetCount.setCount(RandomValueRange.between(1.0F, 2.0F))).apply(ApplyBonus.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))));});
 

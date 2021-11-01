@@ -33,6 +33,16 @@ public class ModItems
                     .food((new Food.Builder().nutrition(4).saturationMod(2.4f).build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
+    public static final RegistryObject<Item> CASHEW_APPLE = ITEMS.register("cashew_apple",
+            () -> new CashewItem(new Item.Properties()
+                    .food((new Food.Builder().nutrition(4).saturationMod(2.4f).build()))
+                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
+
+    public static final RegistryObject<Item> CASHEW = ITEMS.register("cashew_nut",
+            () -> new Item(new Item.Properties()
+                    .food((new Food.Builder().nutrition(2).saturationMod(0.4f).build()))
+                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
+
     public static final RegistryObject<Item> BAMBOO_CUP = ITEMS.register("bamboo_cup",
             () -> new Item(new Item.Properties()
                     .stacksTo(16)
@@ -96,6 +106,12 @@ public class ModItems
             () -> new JuiceItem(new Item.Properties()
                     .stacksTo(8)
                     .food((new Food.Builder().nutrition(1).saturationMod(0.3f).effect(()-> new EffectInstance(Effects.DIG_SPEED, 200, 0), 1f).build()))
+                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
+
+    public static final RegistryObject<Item> CASHEW_MILK_CUP = ITEMS.register("cashew_milk_cup",
+            () -> new JuiceMilkItem(new Item.Properties()
+                    .stacksTo(8)
+                    .food((new Food.Builder().nutrition(0).saturationMod(0).build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
     public static final RegistryObject<Item> ULTIMATE_COCKTAIL = ITEMS.register("ultimate_cocktail",
@@ -184,15 +200,9 @@ public class ModItems
                     .food((new Food.Builder().nutrition(3).saturationMod(1f).build()))
                     .tab(ModItemGroups.MOD_FOOD_GROUP)));
 
-    public static final RegistryObject<Item> CASHEW_APPLE = ITEMS.register("cashew_apple",
-            () -> new CashewItem(new Item.Properties()
-                    .food((new Food.Builder().nutrition(4).saturationMod(2.4f).build()))
-                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
-
-    public static final RegistryObject<Item> CASHEW = ITEMS.register("cashew_nut",
+    public static final RegistryObject<Item> ELDER_GUARDIAN_SPIKE = ITEMS.register("elder_guardian_spike",
             () -> new Item(new Item.Properties()
-                    .food((new Food.Builder().nutrition(2).saturationMod(0.4f).build()))
-                    .tab(ModItemGroups.MOD_FOOD_GROUP)));
+                    .tab(ModItemGroups.MOD_MOB_GROUP)));
 
     public static void register(IEventBus eventBus)
     {

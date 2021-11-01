@@ -3,6 +3,7 @@ package com.nano.extract.data;
 import com.nano.extract.ModMain;
 import com.nano.extract.data.client.ModBlockStateProvider;
 import com.nano.extract.data.client.ModItemModelProvider;
+import com.nano.extract.events.ModLootTableProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

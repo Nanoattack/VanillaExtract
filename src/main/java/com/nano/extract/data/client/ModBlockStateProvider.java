@@ -17,6 +17,11 @@ public class ModBlockStateProvider extends BlockStateProvider
     protected void registerStatesAndModels()
     {
 //       simpleBlock(ModBlocks.EXAMPLEBLOCK.get());
+        simpleBlock(ModBlocks.BAMBOO_THATCH.get());
+        simpleBlock(ModBlocks.TILED_BAMBOO_THATCH.get());
+        simpleBlock(ModBlocks.STRIPPED_BAMBOO_THATCH.get());
+//        logBlock(ModBlocks.GREENHEART_LOG.get());
+//        logBlock(ModBlocks.STRIPPED_GREENHEART_LOG.get());
     }
 }
 

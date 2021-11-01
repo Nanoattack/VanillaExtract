@@ -14,4 +14,13 @@ public class ModItemGroups
             return new ItemStack(ModItems.SWEET_BERRY_PIE.get());
         }
     };
+
+    public static final ItemGroup MOD_MOB_GROUP = new ItemGroup("vanillaextractmob")
+    {
+        @Override
+        public ItemStack makeIcon()
+        {
+            return new ItemStack(ModItems.ELDER_GUARDIAN_SPIKE.get());
+        }
+    };
 }

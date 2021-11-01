@@ -1,0 +1,14 @@
+{
+  "type": "extract:juicing",
+  "ingredients": [
+    {
+      "item": "extract:cashew_nut"
+    },
+    {
+      "item": "extract:bamboo_cup"
+    }
+  ],
+  "output": {
+    "item": "extract:cashew_milk_cup"
+  }
+}

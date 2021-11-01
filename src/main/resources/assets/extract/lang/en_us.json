@@ -24,12 +24,17 @@
   "item.extract.chocolate_milk": "Chocolate Milk",
   "item.extract.vanilla_flower": "Vanilla Flower",
   "item.extract.cashew_apple": "Cashew Apple",
+  "item.extract.elder_guardian_spike": "Elder Guardian Spike",
   "item.extract.cashew_nut": "Cashew Nut",
   "item.extract.ultimate_cocktail": "Ultimate Cocktail",
+  "item.extract.cashew_milk_cup": "Cashew Milk Cup",
   "block.extract.juicer": "Juicer",
   "block.extract.opuntia_cactus": "Prickly Pear",
   "block.extract.rice_crop": "Rice Shoots",
+  "block.extract.bamboo_thatch": "Bamboo Thatch",
+  "block.extract.tiled_bamboo_thatch": "Tiled Bamboo Thatch",
   "screen.extract.juicer": "Juicer",
   "tooltip.extract.ultimate_cocktail": "It bubbles oddly...",
-  "itemGroup.vanillaextractfood": "Vanilla Extract - Foodstuffs"
+  "itemGroup.vanillaextractfood": "Vanilla Extract - Foodstuffs",
+  "itemGroup.vanillaextractmob": "Vanilla Extract - Mobs"
 }

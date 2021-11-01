@@ -16,9 +16,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
-
-    {
+    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
         // GENERAL RECIPES
         ShapedRecipeBuilder.shaped(ModBlocks.JUICER.get())
                 .define('P', Items.PISTON)
@@ -150,6 +148,134 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("MBM")
                 .pattern("MMM")
                 .unlockedBy("has_item", has(Items.BROWN_MUSHROOM))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_HELMET)
+                .define('C', Items.CHAIN)
+                .pattern("CCC")
+                .pattern("C C")
+                .unlockedBy("has_item", has(Items.CHAIN))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_CHESTPLATE)
+                .define('C', Items.CHAIN)
+                .pattern("C C")
+                .pattern("CCC")
+                .pattern("CCC")
+                .unlockedBy("has_item", has(Items.CHAIN))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_LEGGINGS)
+                .define('C', Items.CHAIN)
+                .pattern("CCC")
+                .pattern("C C")
+                .pattern("C C")
+                .unlockedBy("has_item", has(Items.CHAIN))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_BOOTS)
+                .define('C', Items.CHAIN)
+                .pattern("C C")
+                .pattern("C C")
+                .unlockedBy("has_item", has(Items.CHAIN))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.BELL)
+                .define('G', Items.GOLD_INGOT)
+                .define('N', Items.GOLD_NUGGET)
+                .define('W', ItemTags.WOODEN_SLABS)
+                .define('S', ItemTags.STONE_TOOL_MATERIALS)
+                .pattern("SWS")
+                .pattern("GGG")
+                .pattern("GNG")
+                .unlockedBy("has_item", has(Items.GOLD_INGOT))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.SADDLE)
+                .define('L', Items.LEATHER)
+                .define('l', Items.LEAD)
+                .define('I', Items.IRON_INGOT)
+                .pattern("LLL")
+                .pattern("LlL")
+                .pattern("I I")
+                .unlockedBy("has_item", has(Items.LEAD))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.TRIDENT)
+                .define('H', Items.HEART_OF_THE_SEA)
+                .define('P', Items.PRISMARINE_SHARD)
+                .define('S', ModItems.ELDER_GUARDIAN_SPIKE.get())
+                .pattern(" SS")
+                .pattern(" HS")
+                .pattern("P  ")
+                .unlockedBy("has_item", has(ModItems.ELDER_GUARDIAN_SPIKE.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.RED_MUSHROOM_BLOCK)
+                .define('R', Items.RED_MUSHROOM)
+                .pattern("RR")
+                .pattern("RR")
+                .unlockedBy("has_item", has(Items.RED_MUSHROOM))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.BROWN_MUSHROOM_BLOCK)
+                .define('B', Items.BROWN_MUSHROOM)
+                .pattern("BB")
+                .pattern("BB")
+                .unlockedBy("has_item", has(Items.BROWN_MUSHROOM))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.COBWEB)
+                .define('S', Items.STRING)
+                .pattern("S S")
+                .pattern(" S ")
+                .pattern("S S")
+                .unlockedBy("has_item", has(Items.STRING))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.NAME_TAG)
+                .define('L', Items.LEAD)
+                .define('P', Items.PAPER)
+                .pattern("  L")
+                .pattern(" P ")
+                .pattern("P  ")
+                .unlockedBy("has_item", has(Items.LEAD))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Items.GILDED_BLACKSTONE)
+                .define('B', Items.BLACKSTONE)
+                .define('G', Items.GOLD_NUGGET)
+                .pattern("GGG")
+                .pattern("GBG")
+                .pattern("GGG")
+                .unlockedBy("has_item", has(Items.BLACKSTONE))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(Items.WARPED_WART_BLOCK, 8)
+                .requires(Items.NETHER_WART_BLOCK, 8)
+                .requires(Items.WARPED_FUNGUS)
+                .unlockedBy("has_item", has(Items.WARPED_FUNGUS))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(Items.NETHER_WART_BLOCK, 8)
+                .requires(Items.WARPED_WART_BLOCK, 8)
+                .requires(Items.CRIMSON_FUNGUS)
+                .unlockedBy("has_item", has(Items.WARPED_FUNGUS))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.BAMBOO_THATCH.get())
+                .define('B', Items.BAMBOO)
+                .pattern("BB")
+                .pattern("BB")
+                .unlockedBy("has_item", has(Items.BAMBOO))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.TILED_BAMBOO_THATCH.get())
+                .define('B', Items.BAMBOO)
+                .define('S', Items.STICK)
+                .pattern("SB")
+                .pattern("BS")
+                .unlockedBy("has_item", has(Items.BAMBOO))
                 .save(consumer);
 
     }

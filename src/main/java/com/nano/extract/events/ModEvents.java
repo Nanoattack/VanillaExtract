@@ -1,6 +1,13 @@
 package com.nano.extract.events;
 
 import com.nano.extract.ModMain;
+import com.nano.extract.item.ModItems;
+import net.minecraft.data.loot.EntityLootTables;
+import net.minecraft.loot.ConstantRange;
+import net.minecraft.loot.ItemLootEntry;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.conditions.KilledByPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
@@ -8,6 +15,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nonnull;
+import java.util.function.BiConsumer;
 
 @Mod.EventBusSubscriber(modid = ModMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEvents
@@ -24,7 +32,9 @@ public class ModEvents
                 (new ResourceLocation(ModMain.MOD_ID,"acacia_leaves_drop_cashew"))
         );
     }
+
 }
+
 
 
 

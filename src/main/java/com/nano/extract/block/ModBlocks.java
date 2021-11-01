@@ -32,7 +32,32 @@ public class ModBlocks
     public static final RegistryObject<Block> RICE = BLOCKS.register("rice_crop",
             () -> new RiceBlock(AbstractBlock.Properties.of(Material.PLANT).sound(SoundType.CROP).noOcclusion().noCollission()));
 
-    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+/*    public static final RegistryObject<Block> GREENHEART_LOG = registerBlock("greenheart_log",
+            () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_LOG)));
+
+    public static final RegistryObject<Block> GREENHEART_WOOD = registerBlock("greenheart_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.OAK_WOOD)));
+
+    public static final RegistryObject<Block> STRIPPED_GREENHEART_LOG = registerBlock("stripped_greenheart_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final RegistryObject<Block> STRIPPED_GREENHEART_WOOD = registerBlock("stripped_greenheart_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final RegistryObject<Block> GREENHEART_PLANKS = registerBlock("greenheart_planks",
+            () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS)));
+*/
+public static final RegistryObject<Block> BAMBOO_THATCH = registerBlock("bamboo_thatch",
+        () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
+
+public static final RegistryObject<Block> TILED_BAMBOO_THATCH = registerBlock("tiled_bamboo_thatch",
+        () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
+
+    public static final RegistryObject<Block> STRIPPED_BAMBOO_THATCH = registerBlock("stripped_bamboo_thatch",
+            () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.BAMBOO)));
+
+    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block)
+    {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;

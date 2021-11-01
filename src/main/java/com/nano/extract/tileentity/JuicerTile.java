@@ -71,9 +71,12 @@ public class JuicerTile extends TileEntity implements ITickableTileEntity {
                                    stack.getItem() == ModItems.CHORUS_FRUIT_JUICE.get() ||
                                    stack.getItem() == ModItems.MILK_CUP.get() ||
                                    stack.getItem() == ModItems.CHOCOLATE_MILK.get() ||
-                                   stack.getItem() == ModItems.CARROT_JUICE.get();
+                                   stack.getItem() == ModItems.CARROT_JUICE.get() ||
+                                   stack.getItem() == ModItems.CASHEW_MILK_CUP.get();
 
-                    case 0: return true;
+                    case 0: if(stack.getItem() == ModItems.BAMBOO_CUP.get())
+                        return false;
+                            else return true;
 
                     default:
                         return false;

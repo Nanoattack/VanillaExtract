@@ -15,6 +15,9 @@ public class ModItemModelProvider extends ItemModelProvider
 @Override
     protected void registerModels() {
     withExistingParent("juicer", modLoc("block/juicer"));
+    withExistingParent("bamboo_thatch", modLoc("block/bamboo_thatch"));
+    withExistingParent("tiled_bamboo_thatch", modLoc("block/tiled_bamboo_thatch"));
+    withExistingParent("stripped_bamboo_thatch", modLoc("block/stripped_bamboo_thatch"));
 
     ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
     // General
@@ -48,6 +51,8 @@ public class ModItemModelProvider extends ItemModelProvider
     builder(itemGenerated, "ultimate_cocktail");
     builder(itemGenerated, "cashew_apple");
     builder(itemGenerated, "cashew_nut");
+    builder(itemGenerated, "elder_guardian_spike");
+    builder(itemGenerated, "cashew_milk_cup");
 }
 
     private ItemModelBuilder builder(ModelFile itemGenerated, String name) {

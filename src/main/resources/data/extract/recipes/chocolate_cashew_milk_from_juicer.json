@@ -1,0 +1,14 @@
+{
+  "type": "extract:juicing",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "extract:cashew_milk_cup"
+    }
+  ],
+  "output": {
+    "item": "extract:chocolate_milk"
+  }
+}

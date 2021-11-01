@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " SS",
+    " HS",
+    "P  "
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "P": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "S": {
+      "item": "extract:elder_guardian_spike"
+    }
+  },
+  "result": {
+    "item": "minecraft:trident"
+  }
+}
